@@ -1,9 +1,8 @@
-jQuery(document).ready(function(){
-    $('body').hide();
-    $('#loader').prependTo(window);
-});
+// show loading image
+$('#loader').show();
 
-jQuery(window).load(function(){
-    $('#loader').remove();
-	$('body').show();
+// main image loaded ?
+$('img').on('load', function(){
+  // hide/remove the loading image
+  $('#loader').hide();
 });
