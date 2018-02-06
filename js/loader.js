@@ -1,8 +1,8 @@
-var $loading = $('#loader').hide();
-$(document)
-  .ajaxStart(function () {
-    $loading.show();
-  })
-  .ajaxStop(function () {
-    $loading.hide();
-  });
+// show loading image
+$('#loader').show();
+
+// main image loaded ?
+$('img').on('load', function(){
+  // hide/remove the loading image
+  $('#loader').hide();
+});
