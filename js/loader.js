@@ -1,6 +1,8 @@
+// show loading image
 $('#loader').show();
-jQuery(window).on('load', function() {
-	$('.materialboxed').load(function(){
-		$('#loader').hide();
-	});
+
+// main image loaded ?
+$('img').on('load', function(){
+  // hide/remove the loading image
+  $('#loader').hide();
 });
