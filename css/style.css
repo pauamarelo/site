@@ -505,3 +505,44 @@ footer .twitch:hover li {
 .materialbox-caption {
 	font-size: 20px;
 }
+
+
+
+.noticias img {
+	margin: 0 auto;
+	display: block;
+	max-width: 150px;
+}
+
+.noticias a {
+	color: #667292;
+}
+.noticias a:hover {
+	color: #445070;
+}
+
+.noticias .col.m9 {
+	border-right: solid 1px #999;
+}
+
+.noticias .news hr,
+.noticias .lastNews hr {
+	margin: 15px 0;
+	padding: 0;
+	border: dotted 0.5px #999;
+}
+
+.noticias .news:last-child hr,
+.noticias .lastNews:last-child hr {
+	display: none;
+}
+
+.noticias .lastNews h6 {
+	margin-top: 0;
+	font-size: 20px;
+}
+.noticias .lastNews p {
+	margin-top: 0;
+	font-size: 18px;
+	line-height: 1.2;
+}
