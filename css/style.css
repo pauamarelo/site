@@ -191,6 +191,10 @@ p {
 
 /*** MODAL ***/
 
+.modal-trigger {
+	z-index: 1 !important;
+}
+
 .modal h4 {
 	font-size: 30px;
 	text-align: center;
@@ -375,7 +379,6 @@ p {
 	background-color: #667292;
 }
 
-
 /* ESCONDE AS SETAS DO INPUT NUMBER */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -406,7 +409,9 @@ footer a {
 }
 
 footer li {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	margin-right: 10px;
 	background-color: rgba(0, 0, 0, 0.5);
 	border-radius: 50px;
@@ -415,13 +420,8 @@ footer li {
 	transition: 0.3s;
 }
 
-footer li i {
-	margin: 12.5px;
+footer li .fa {
 	font-size: 25px !important;
-}
-
-footer .fa-facebook {
-	margin-left: 17.5px;
 }
 
 footer .steam:hover li {
