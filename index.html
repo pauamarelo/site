@@ -17,77 +17,17 @@
 </head>
 <body ng-app="myApp">
 
-<!--NAVBAR-->
-    <div class="navbar-fixed" ng-controller="headerCtrl">
-        <nav id="content">
-            <div class="nav-wrapper">
-                <div class="container">
-                    <a href="" class="brand-logo" ng-click="goToTop()">PAU AMARELO</a>
-                    <a href="#" data-activates="mobile-demo" data-sidenav="left" data-closeonclick="true" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li id="nav-line"><a href="#line" du-scrollspy ng-click="goToLine()">Line Up</a></li>
-                        <li><a href="#mapa" du-scrollspy ng-click="goToMapa()">Mapa</a></li>
-                        <li><a href="#peneira" du-scrollspy ng-click="goToPeneira()">Peneira</a></li>
-                        <li><a ui-sref="galeria" ng-class="{'active': isActive('/galeria')}">Galeria</a></li>
-                    </ul>
-                </div>
-                <ul class="side-nav section" id="mobile-demo">
-                    <li><a href="#line" du-scrollspy ng-click="goToLine()">Line Up</a></li>
-                    <li><a href="#mapa" du-scrollspy ng-click="goToMapa()">Mapa</a></li>
-                    <li><a href="#peneira" du-scrollspy ng-click="goToPeneira()">Peneira</a></li>
-                    <li><a ui-sref="galeria" ng-class="{'active': isActive('/galeria')}">Galeria</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+<!-- HEADER -->
+<div ng-include="'views/includes/header.html'" ng-controller="headerCtrl" ng-cloak></div>
 
-
+<!-- VIEW -->
 <div ui-view>
-    <!-- <div class="loader"></div> -->
-    Carregando...
+    <div class="loader loader-pokeball is-active"></div>
+    <!-- Carregando... -->
 </div>
 
-
-<!--FOOTER-->
-    <footer class="page-footer" ng-controller="footerCtrl">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">PAU AMARELO</h5>
-                    <p class="grey-text text-lighten-4">O maior clan da parte Sul/Sudeste do Brasil.</p>
-                </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Social</h5>
-                <ul>
-                    <a class="grey-text text-lighten-3 steam" target="_blank" href="http://steamcommunity.com/groups/sitiodopicapau">
-                        <li class="wow rotateIn" data-wow-delay="0.1s"><i class="fa fa-steam" aria-hidden="true"></i></li>
-                    </a>
-                    <a class="grey-text text-lighten-3 facebook" href="#!">
-                        <li class="wow rotateIn" data-wow-delay="0.2s"><i class="fa fa-facebook" aria-hidden="true"></i></li>
-                    </a>
-                    <a class="grey-text text-lighten-3 youtube" href="#!">
-                        <li class="wow rotateIn" data-wow-delay="0.3s"><i class="fa fa-youtube-play" aria-hidden="true"></i></li>
-                    </a>
-                    <a class="grey-text text-lighten-3 twitch" href="#!">
-                        <li class="wow rotateIn" data-wow-delay="0.4s"><i class="fa fa-twitch" aria-hidden="true"></i></li>
-                    </a>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col s6">
-                        <p>PAU AMARELO ©2014 - {{hoje}}</p>
-                    </div>
-                    <div class="col s6">
-                        <p class="grey-text text-lighten-4 right">Created by <a target="_blank" href="https://brdppl.github.io/site/">brd</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+<!-- FOOTER -->
+<div ng-include="'views/includes/footer.html'" ng-controller="footerCtrl" ng-cloak></div>
 
 
 <!--SCRIPTS-->

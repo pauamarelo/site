@@ -1,0 +1,22 @@
+<div class="navbar-fixed">
+    <nav id="content">
+        <div class="nav-wrapper">
+            <div class="container">
+                <a href="" class="brand-logo" ng-click="goToTop()">PAU AMARELO</a>
+                <a href="#" data-activates="mobile-demo" data-sidenav="left" data-closeonclick="true" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li id="nav-line"><a href="#line" du-scrollspy ng-click="goToLine()">Line Up</a></li>
+                    <li><a href="#mapa" du-scrollspy ng-click="goToMapa()">Mapa</a></li>
+                    <li><a href="#peneira" du-scrollspy ng-click="goToPeneira()">Peneira</a></li>
+                    <li><a ui-sref="galeria" ng-class="{'active': isActive('/galeria')}">Galeria</a></li>
+                </ul>
+            </div>
+            <ul class="side-nav section" id="mobile-demo">
+                <li><a href="#line" du-scrollspy ng-click="goToLine()">Line Up</a></li>
+                <li><a href="#mapa" du-scrollspy ng-click="goToMapa()">Mapa</a></li>
+                <li><a href="#peneira" du-scrollspy ng-click="goToPeneira()">Peneira</a></li>
+                <li><a ui-sref="galeria" ng-class="{'active': isActive('/galeria')}">Galeria</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
