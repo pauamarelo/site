@@ -18,7 +18,7 @@
                 <div class="fotosContainer">
                     <div class="fotos" ng-repeat="coluna in galeria">
                         <div class="row">
-                            <img ng-repeat="x in coluna.fotos" materialboxed ng-src="{{x.imagem}}" class="materialboxed" data-caption="{{x.legenda}}">
+                            <img ng-repeat="x in coluna.fotos" materialboxed src="images/loaader_circle_by_gleb.gif" lazy-img='{{x.imagem}}' class="materialboxed" data-caption="{{x.legenda}}">
                         </div>
                     </div>
                 </div>

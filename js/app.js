@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ["ui.router", "ngSanitize", "ui.materialize", "duScroll"]);
+var app = angular.module("myApp", ["ui.router", "ngSanitize", "ui.materialize", "duScroll", "angularLazyImg"]);
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise("/");
 
@@ -102,6 +102,10 @@ app.controller("headerCtrl", function($scope, $location, $timeout, $state) {
     };
 });
 
+app.controller("footerCtrl", function($scope) {
+    $scope.hoje = new Date().getFullYear();
+});
+
 app.controller("homeCtrl", function($scope, $http) {
     $scope.hoje = new Date().getFullYear();
 
@@ -200,10 +204,6 @@ app.controller("homeCtrl", function($scope, $http) {
             });
 	    }
 	})
-});
-
-app.controller("footerCtrl", function($scope) {
-    $scope.hoje = new Date().getFullYear();
 });
 
 app.controller("galeriaCtrl", function($scope, $http) {
