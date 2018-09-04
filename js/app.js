@@ -12,6 +12,16 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             url: "/galeria",
             templateUrl: "views/galeria.html",
             controller: "galeriaCtrl"
+        })
+        .state("noticias", {
+            url: "/noticias",
+            templateUrl: "views/noticias.html",
+            controller: "noticiasCtrl"
+        })
+        .state("noticia", {
+            url: "/noticia/:url",
+            templateUrl: "views/noticia.html",
+            controller: "noticiaCtrl"
         });
 
     $locationProvider.html5Mode(true);
@@ -214,11 +224,62 @@ app.controller("galeriaCtrl", function($scope, $http) {
     })
 });
 
+app.controller("noticiasCtrl", function($scope, $http) {
+    $scope.dados = {};
+    $scope.retorno = {};
+
+    $http.get('json/noticias.json')
+    .then(function(response) {
+        $scope.noticias = response.data.lista;
+    })
+});
+
+app.controller("noticiaCtrl", function($scope, $http, $stateParams) {
+    $scope.dados = {};
+    $scope.retorno = {};
+    var url = Number($stateParams.url);
+    
+
+    $http.get('json/noticias.json')
+    .then(function(response) {
+        $scope.noticias = response.data.lista;
+
+        $scope.noticia = $scope.noticias.filter(function(user) {
+            return user.idNoticia === url;
+        })[0];
+        console.log('teste', $scope.noticia);
+    })
+
+
+
+    // Disqus
+    var disqus_config = function () {
+        this.page.url = $scope.noticia.idNoticia;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = $scope.noticia.idNoticia; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://pauamarelo-1.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+});
+
 //############## FILTERS ##############//
-app.filter('limite', function() {
+app.filter('limiteTitulo', function() {
+    var caracteres = 50;
     return function (input) {
-        if (input.length <= 26) return input;
-        var output = input.substring(0,26) + "...";
+        if (input.length <= caracteres) return input;
+        var output = input.substring(0, caracteres) + "...";
+        return output;
+    };
+});
+
+app.filter('limite', function() {
+    var caracteres = 120;
+    return function (input) {
+        if (input.length <= caracteres) return input;
+        var output = input.substring(0, caracteres) + "...";
         return output;
     };
 });
