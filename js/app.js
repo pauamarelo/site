@@ -24,7 +24,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             controller: "noticiaCtrl"
         });
 
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true).hashPrefix('!');
 });
 app.value('duScrollOffset', 50);
 
