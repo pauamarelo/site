@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+
+    <title>PAU AMARELO | O Maior Clan da Parte Sul/Sudeste do Brasil</title>
+
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Lobster|Roboto" rel="stylesheet"> 
+</head>
+<body ng-app="myApp">
+
+<!-- HEADER -->
+<div ng-include="'views/includes/header.html'" ng-controller="headerCtrl" ng-cloak></div>
+
+<!-- VIEW -->
+<div ui-view>
+    <div class="loader loader-pokeball is-active"></div>
+    <!-- Carregando... -->
+</div>
+
+<!-- FOOTER -->
+<div ng-include="'views/includes/footer.html'" ng-controller="footerCtrl" ng-cloak></div>
+
+
+<!--SCRIPTS-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <!-- <script src="bower_components/angular-route/angular-route.min.js"></script> -->
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="bower_components/angular-materialize/src/angular-materialize.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
+    <script src="bower_components/angular-lazy-img/release/angular-lazy-img.min.js"></script>
+    <script src="bower_components/wow/dist/wow.min.js"></script>
+    <!-- <script src="js/init.js"></script> -->
+    <script src="js/app.js"></script>
+</body>
+</html>
