@@ -31,10 +31,10 @@ app.value('duScrollOffset', 50);
 app.run(function($rootScope, $http, $transitions, $location, $timeout) {
     $transitions.onEnter({}, function () { //mantém sempre no topo (obrigatório no uso do ui-router)
         document.body.scrollTop = document.documentElement.scrollTop = 0;
-        $('#main').addClass('animated fadeIn')
+        $('body').addClass('animated fadeIn')
     });
     $transitions.onExit({}, function () {
-        $('#main').removeClass('animated fadeIn')
+        $('body').removeClass('animated fadeIn')
     });
 
     new WOW().init();
