@@ -28,9 +28,13 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 });
 app.value('duScrollOffset', 50);
 
-app.run(function($rootScope, $http, $transitions, $location) {
-    $transitions.onSuccess({}, function () { //mantÃ©m sempre no topo (obrigatÃ³rio no uso do ui-router)
+app.run(function($rootScope, $http, $transitions, $location, $timeout) {
+    $transitions.onEnter({}, function () { //mantém sempre no topo (obrigatório no uso do ui-router)
         document.body.scrollTop = document.documentElement.scrollTop = 0;
+        $('#main').addClass('animated fadeIn')
+    });
+    $transitions.onExit({}, function () {
+        $('#main').removeClass('animated fadeIn')
     });
 
     new WOW().init();
