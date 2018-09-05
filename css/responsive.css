@@ -51,7 +51,7 @@ and (max-width: 1599) {
 
     .modal {
         width: 100% !important;
-        min-height: 560px !important;
+        min-height: 500px !important;
         top: 40px !important;
     }
 

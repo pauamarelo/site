@@ -476,7 +476,7 @@ footer .twitch:hover li {
   	height: auto;
 }
 .noticias .box:hover img {
-	width: 225px;
+	width: calc(100% + 50px);
 	transition: 0.2s;
 	transform: rotate(3deg);
 }
