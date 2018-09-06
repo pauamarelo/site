@@ -231,11 +231,24 @@ app.controller("galeriaCtrl", function($scope, $http) {
 app.controller("noticiasCtrl", function($scope, $http) {
     $scope.dados = {};
     $scope.retorno = {};
+    var url = 'http://pauamarelo.esy.es/controller';
 
-    $http.get('json/noticias.json')
-    .then(function(response) {
-        $scope.noticias = response.data.lista;
-    })
+    // $http.get('json/noticias.json')
+    // .then(function(response) {
+    //     $scope.noticias = response.data.lista;
+    // })
+
+    // Listar notícias
+    $scope.listar = function () {
+        $http.get(url+'/listar.php')
+        .then(function onSuccess(response) {
+            // $scope.user_list = response.data.user_data;
+            $scope.noticias = response.data;
+
+            console.log('lista: ', response);
+        });
+    };
+    $scope.listar();
 });
 
 app.controller("noticiaCtrl", function($scope, $http, $stateParams) {
