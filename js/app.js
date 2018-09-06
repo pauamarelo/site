@@ -242,17 +242,31 @@ app.controller("noticiaCtrl", function($scope, $http, $stateParams) {
     $scope.dados = {};
     $scope.retorno = {};
     var url = Number($stateParams.url);
+    var base = 'http://pauamarelo.esy.es/controller';
     
 
-    $http.get('json/noticias.json')
-    .then(function(response) {
-        $scope.noticias = response.data.lista;
+    // $http.get('json/noticias.json')
+    // .then(function(response) {
+    //     $scope.noticias = response.data.lista;
 
-        $scope.noticia = $scope.noticias.filter(function(user) {
-            return user.idNoticia === url;
-        })[0];
-        console.log('teste', $scope.noticia);
-    })
+    //     $scope.noticia = $scope.noticias.filter(function(user) {
+    //         return user.idNoticia === url;
+    //     })[0];
+    //     console.log('teste', $scope.noticia);
+    // })
+    // Listar notícias
+    $scope.listar = function () {
+        $http.get(base+'/listar.php')
+        .then(function onSuccess(response) {
+            // $scope.user_list = response.data.user_data;
+            $scope.noticias = response.data;
+            
+            $scope.noticia = $scope.noticias.filter(function(user) {
+                return user.idNoticia === url;
+            })[0];
+        });
+    };
+    $scope.listar();
 
 
 
