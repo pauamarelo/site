@@ -24,6 +24,7 @@
         			<div class="col s12 m9">
         				<a ui-sref="noticia({url: x.url})"><h3>{{x.titulo | limiteTitulo}}</h3></a>
         				<p ng-bind-html="x.conteudo | limite"></p>
+					<p><span>Postado em: {{x.data | date: 'dd/MM/yyyy'}} por {{x.autor}}</span></p>
         			</div>
         		</div>
         	</div>
