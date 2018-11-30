@@ -241,7 +241,7 @@ app.controller("noticiasCtrl", function($scope, $http) {
 app.controller("noticiaCtrl", function($scope, $http, $stateParams) {
     $scope.dados = {};
     $scope.retorno = {};
-    var url = Number($stateParams.url);
+    var url = $stateParams.url;
     
 
     $http.get('json/noticias.json')
@@ -249,7 +249,7 @@ app.controller("noticiaCtrl", function($scope, $http, $stateParams) {
         $scope.noticias = response.data.lista;
 
         $scope.noticia = $scope.noticias.filter(function(user) {
-            return user.idNoticia === url;
+            return user.url === url;
         })[0];
         console.log('teste', $scope.noticia);
     })
