@@ -13,7 +13,7 @@
         		<div class="row">
         			<div class="col s12 m3">
         				<div class="box">
-		        			<a ui-sref="noticia({url: x.idNoticia})">
+		        			<a ui-sref="noticia({url: x.url})">
 		        				<img ng-src="{{x.capa}}">
 		        				<div class="overlay">
 		        					<i class="fa fa-link" aria-hidden="true"></i>
@@ -22,7 +22,7 @@
 		        		</div>
         			</div>
         			<div class="col s12 m9">
-        				<a ui-sref="noticia({url: x.idNoticia})"><h3>{{x.titulo | limiteTitulo}}</h3></a>
+        				<a ui-sref="noticia({url: x.url})"><h3>{{x.titulo | limiteTitulo}}</h3></a>
         				<p ng-bind-html="x.conteudo | limite"></p>
         			</div>
         		</div>
