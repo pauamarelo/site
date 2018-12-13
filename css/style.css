@@ -537,8 +537,7 @@ footer .twitch:hover li {
 	font-size: 22px !important;
 }
 
-.noticia .news-body img,
-.noticia .news-body a {
+.noticia .news-body img {
 	margin: 0 auto;
 	display: block;
 	max-width: 400px;
