@@ -265,7 +265,7 @@ app.controller("noticiaCtrl", function($scope, $http, $stateParams) {
         $scope.noticias = response.data.lista;
 
         $scope.noticia = $scope.noticias.filter(function(user) {
-            return user.url === url;
+            return user.urlNoticia === url;
         })[0];
     })
 
