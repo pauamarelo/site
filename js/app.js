@@ -229,7 +229,7 @@ app.controller("galeriaCtrl", function($scope, $http) {
 });
 
 app.controller("noticiasCtrl", function($scope, $http) {
-    var base = 'http://pauamarelo.000webhostapp.com/@/admin/'
+    var base = 'http://pauamarelo.000webhostapp.com/@/'
 
     $scope.dados = {};
     $scope.retorno = {};
@@ -238,9 +238,9 @@ app.controller("noticiasCtrl", function($scope, $http) {
     // .then(function(response) {
     //     $scope.noticias = response.data.lista;
     // })
-    $http.post(base+'controller/class.conteudos.php', {'acao': 'listar'})
+    $http.get(base+'controller/listar.php')
     .then(function(response) {
-        $scope.noticias = response.data.lista;
+        $scope.noticias = response.data;
     })
 });
 
