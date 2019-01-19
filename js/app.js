@@ -229,29 +229,44 @@ app.controller("galeriaCtrl", function($scope, $http) {
 });
 
 app.controller("noticiasCtrl", function($scope, $http) {
+    var base = 'http://pauamarelo.000webhostapp.com/@/admin/'
+
     $scope.dados = {};
     $scope.retorno = {};
 
-    $http.get('json/noticias.json')
+    // $http.get('json/noticias.json')
+    // .then(function(response) {
+    //     $scope.noticias = response.data.lista;
+    // })
+    $http.post(base+'controller/class.conteudos.php', {'acao': 'listar'})
     .then(function(response) {
         $scope.noticias = response.data.lista;
     })
 });
 
 app.controller("noticiaCtrl", function($scope, $http, $stateParams) {
+    var base = 'http://pauamarelo.000webhostapp.com/@/admin/'
+
     $scope.dados = {};
     $scope.retorno = {};
     var url = $stateParams.url;
     
+    // $http.get('json/noticias.json')
+    // .then(function(response) {
+    //     $scope.noticias = response.data.lista;
 
-    $http.get('json/noticias.json')
+    //     $scope.noticia = $scope.noticias.filter(function(user) {
+    //         return user.url === url;
+    //     })[0];
+    //     console.log('teste', $scope.noticia);
+    // })
+    $http.post(base+'controller/class.conteudos.php', {'acao': 'listar'})
     .then(function(response) {
         $scope.noticias = response.data.lista;
 
         $scope.noticia = $scope.noticias.filter(function(user) {
             return user.url === url;
         })[0];
-        console.log('teste', $scope.noticia);
     })
 
 
