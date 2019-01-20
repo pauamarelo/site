@@ -229,7 +229,7 @@ app.controller("galeriaCtrl", function($scope, $http) {
 });
 
 app.controller("noticiasCtrl", function($scope, $http) {
-    var base = 'http://pauamarelo.000webhostapp.com/@/'
+    var base = 'http://pauamarelo.000webhostapp.com/@/admin/'
 
     $scope.dados = {};
     $scope.retorno = {};
@@ -238,10 +238,22 @@ app.controller("noticiasCtrl", function($scope, $http) {
     // .then(function(response) {
     //     $scope.noticias = response.data.lista;
     // })
-    $http.get(base+'controller/listar.php')
-    .then(function(response) {
-        $scope.noticias = response.data;
-    })
+
+    // $http.get(base+'controller/listar.php')
+    // .then(function(response) {
+    //     $scope.noticias = response.data;
+    // })
+
+    $scope.listar = function () {
+        var objData = {
+            "acao": "listar"
+        };
+        $http.post(base+'controller/class.conteudos.php', objData)
+        .then(function onSuccess(response) {
+            $scope.noticias = response.data.lista;
+        });
+    };
+    $scope.listar();
 });
 
 app.controller("noticiaCtrl", function($scope, $http, $stateParams) {
