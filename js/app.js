@@ -262,7 +262,7 @@ app.controller("noticiaCtrl", function($scope, $http, $stateParams) {
     // })
     $http.get(base+'controller/listar.php')
     .then(function(response) {
-        $scope.noticias = response.data.lista;
+        $scope.noticias = response.data;
 
         $scope.noticia = $scope.noticias.filter(function(user) {
             return user.urlNoticia === url;
