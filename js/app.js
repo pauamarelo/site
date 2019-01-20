@@ -239,19 +239,19 @@ app.controller("noticiasCtrl", function($scope, $http) {
     //     $scope.noticias = response.data.lista;
     // })
 
-    // $http.get(base+'controller/listar.php')
-    // .then(function(response) {
-    //     $scope.noticias = response.data;
-    // })
-
     $scope.listar = function () {
-        var objData = {
-            "acao": "listar"
-        };
-        $http.post(base+'controller/class.conteudos.php', objData)
-        .then(function onSuccess(response) {
-            $scope.noticias = response.data.lista;
-        });
+        $http.get(base+'controller/listar.php')
+        .then(function(response) {
+            $scope.noticias = response.data;
+        })
+        
+        // var objData = {
+        //     "acao": "listar"
+        // };
+        // $http.post(base+'controller/class.conteudos.php', objData)
+        // .then(function onSuccess(response) {
+        //     $scope.noticias = response.data.lista;
+        // });
     };
     $scope.listar();
 });
