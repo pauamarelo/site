@@ -569,4 +569,5 @@ footer .twitch:hover li {
 /* Loading */
 .loading i {
 	font-size: 30px;
+	color: #333;
 }
