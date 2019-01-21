@@ -240,9 +240,11 @@ app.controller("noticiasCtrl", function($scope, $http) {
     // })
 
     $scope.listar = function () {
+        $scope.loading = true
         $http.get(base+'controller/listar.php')
         .then(function(response) {
             $scope.noticias = response.data;
+            $scope.loading = false
         })
         
         // var objData = {

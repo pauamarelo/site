@@ -50,6 +50,12 @@ p {
 .mb-30 {margin-bottom: 30px;}
 .mb-50 {margin-bottom: 50px;}
 
+.centraliza {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+
 /****** NAVBAR ******/
 
 .nav-wrapper {
@@ -557,4 +563,10 @@ footer .twitch:hover li {
 .noticia span {
 	font-size: 16px;
 	color: #aaa;
+}
+
+
+/* Loading */
+.loading i {
+	font-size: 30px;
 }
