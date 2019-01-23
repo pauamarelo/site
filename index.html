@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="myApp">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
+    
+    <meta property="og:title" content="{{noticia.titulo}}">
+    <meta property="og:site_name" content="PAU AMARELO">
+    <meta property="og:description" content="{{noticia.conteudo | limite}}">
+    <meta property="og:image" content="http://pauamarelo.000webhostapp.com/@/admin/.//{{noticia.capa}}">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="600">
 
     <title>PAU AMARELO | O Maior Clan da Parte Sul/Sudeste do Brasil</title>
 
@@ -15,7 +23,7 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link href="https://fonts.googleapis.com/css?family=Abel|Lobster|Roboto" rel="stylesheet"> 
 </head>
-<body ng-app="myApp">
+<body>
 
 <!-- HEADER -->
 <div ng-include="'views/includes/header.html'" ng-controller="headerCtrl" ng-cloak></div>
