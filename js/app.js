@@ -57,15 +57,6 @@ app.run(function($rootScope, $http, $transitions, $location, $timeout) {
     //     init.src = "js/init.js";
     //     document.body.appendChild(init);
     // });
-	var base = 'http://pauamarelo.000webhostapp.com/'
-	$http.get(base+'controller/listar.php')
-	    .then(function(response) {
-		$rootScope.noticias = response.data;
-
-		$rootScope.noticia = $rootScope.noticias.filter(function(user) {
-		    return user.urlNoticia === url;
-		})[0];
-	})
 });
 
 app.controller("headerCtrl", function($scope, $location, $timeout, $state) {
