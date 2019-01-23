@@ -28,7 +28,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 });
 app.value('duScrollOffset', 50);
 
-app.run(function($rootScope, $http, $transitions, $location, $timeout, $stateParams) {
+app.run(function($rootScope, $http, $transitions, $location, $timeout) {
     $transitions.onEnter({}, function () { //mantém sempre no topo (obrigatório no uso do ui-router)
         document.body.scrollTop = document.documentElement.scrollTop = 0;
         $('body').addClass('animated fadeIn')
@@ -57,22 +57,6 @@ app.run(function($rootScope, $http, $transitions, $location, $timeout, $statePar
     //     init.src = "js/init.js";
     //     document.body.appendChild(init);
     // });
-	
-    // Teste
-    var base = 'http://pauamarelo.000webhostapp.com/@/'
-
-    $rootScope.dados = {};
-    $rootScope.retorno = {};
-    var url = $stateParams.url;
-	
-    $http.get(base+'controller/listar.php')
-    .then(function(response) {
-        $rootScope.noticias = response.data;
-
-        $rootScope.noticia = $rootScope.noticias.filter(function(user) {
-            return user.urlNoticia === url;
-        })[0];
-    })
 });
 
 app.controller("headerCtrl", function($scope, $location, $timeout, $state) {
