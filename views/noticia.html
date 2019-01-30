@@ -1,0 +1,22 @@
+<div class="noticia">
+	<div class="parallax-container news-title">
+        <div parallax><img ng-src="http://pauamarelo.000webhostapp.com/@/admin/.//{{noticia.capa}}" style="filter: blur(5px);"></div>
+        <div class="logo-pa">
+            <h1>{{noticia.titulo}}</h1>
+        </div>
+    </div>
+
+
+    <div class="container mt-30 mb-30">
+        <div class="row">
+        	<div class="col s12 m10 offset-m1 news-body">
+		<p><span>Postado em: {{noticia.dtNoticia | date: 'dd/MM/yyyy'}} por {{noticia.autor}}</span></p>
+		<p ng-bind-html="noticia.conteudo"></p>
+		</div>
+        </div>
+        
+        
+        <h3>Comentários</h3>
+        <div id="disqus_thread"></div>
+    </div>
+</div>

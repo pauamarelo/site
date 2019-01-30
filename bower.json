@@ -1,0 +1,29 @@
+{
+  "name": "pauamareloangular",
+  "authors": [
+    "Bernardo Sampaio"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "angular": "^1.7.3",
+    "angular-animate": "^1.7.3",
+    "angular-route": "^1.7.3",
+    "angular-sanitize": "^1.7.3",
+    "angular-touch": "^1.7.3",
+    "materialize": "^0.100.2",
+    "angular-materialize": "^0.2.2",
+    "animate.css": "^3.7.0",
+    "wow": "wow-mit#^1.3.0"
+  }
+}
