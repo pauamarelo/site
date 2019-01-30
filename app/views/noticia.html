@@ -12,11 +12,11 @@
         	<div class="col s12 m10 offset-m1 news-body">
                 <p>
                     <span>Postado em: {{:: vm.noticia.dtNoticia | date: 'dd/MM/yyyy'}} por {{:: vm.noticia.autor}}</span>
-                    <span> &bull; </span>
+                    <!-- <span> &bull; </span>
                     <a href="" class="comments" ng-click="vm.scrollToComments()">
-                        <span class="fb-comments-count" data-href="{{vm.link}}"></span>
+                        <span fb-comments-count data-href="{{vm.link}}"></span>
                         <span> comentário(s)</span>
-                    </a>
+                    </a> -->
                 </p>
                 <p ng-bind-html="vm.noticia.conteudo"></p>
             </div>
@@ -26,6 +26,12 @@
         <h3>Comentários</h3>
         <!-- <div id="disqus_thread"></div> -->
         <!-- <dir-disqus config="vm.disqusConfig"></dir-disqus> -->
-        <div class="fb-comments" data-href="{{vm.link}}" data-numposts="5" data-mobile="true"></div>
+        <fb-comments
+            href="{{vm.link}}"
+            numposts="5"
+            colorscheme="light"
+            mobile="true"
+            width="100%">
+        </fb-comments> 
     </div>
 </div>

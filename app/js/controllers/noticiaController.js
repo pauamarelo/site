@@ -3,7 +3,7 @@
 
     const app = angular.module('myApp')
 
-    app.controller("noticiaCtrl", function($scope, $http, $stateParams, $location, $timeout) {
+    app.controller("noticiaCtrl", function($scope, $http, $stateParams, $location) {
         const vm = this
 
         const base = 'http://pauamarelo.000webhostapp.com/@/'
@@ -22,13 +22,6 @@
                 vm.noticia = vm.noticias.filter(function(user) {
                     return user.urlNoticia === url
                 })[0]
-
-                // Facebook comments
-                $timeout(function () {
-                    if (typeof FB != 'undefined') {
-                        FB.XFBML.parse(elem[0]);
-                    }
-                }, 500);
     
                 // Disqus
                 // var disqus_config = function () {
@@ -44,7 +37,7 @@
 
                 // vm.disqusConfig = {
                 //     disqus_shortname: 'pauamarelo-1',
-                //     disqus_identifier: vm.noticia.idNoticia,
+                //     disqus_identifier: Number(vm.noticia.idNoticia),
                 //     disqus_url: url
                 //     // disqus_url: $location.absUrl()
                 // }
