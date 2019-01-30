@@ -3,7 +3,7 @@
 
     const app = angular.module('myApp')
 
-    app.controller("noticiaCtrl", function($scope, $http, $stateParams, $location) {
+    app.controller("noticiaCtrl", function($scope, $http, $stateParams, $location, $timeout) {
         const vm = this
 
         const base = 'http://pauamarelo.000webhostapp.com/@/'
@@ -11,6 +11,8 @@
         vm.dados = {}
         vm.retorno = {}
         const url = $stateParams.url
+
+        vm.link = $location.absUrl()
         
         function listar() {
             $http.get(base+'controller/listar.php')
@@ -20,10 +22,17 @@
                 vm.noticia = vm.noticias.filter(function(user) {
                     return user.urlNoticia === url
                 })[0]
+
+                // Facebook comments
+                $timeout(function () {
+                    if (typeof FB != 'undefined') {
+                        FB.XFBML.parse(elem[0]);
+                    }
+                }, 500);
     
                 // Disqus
                 // var disqus_config = function () {
-                //     this.page.url = vm.noticia.url  // Replace PAGE_URL with your page's canonical URL variable
+                //     this.page.url = url  // Replace PAGE_URL with your page's canonical URL variable
                 //     this.page.identifier = vm.noticia.idNoticia // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                 // }
                 // (function() { // DON'T EDIT BELOW THIS LINE
@@ -33,16 +42,24 @@
                 //     (d.head || d.body).appendChild(s)
                 // })()
 
-                vm.disqusConfig = {
-                    disqus_shortname: 'pauamarelo-1',
-                    disqus_identifier: vm.noticia.idNoticia,
-                    // disqus_url: 'http://localhost/pauamarelo/public/noticia/'+vm.noticia.url
-                    disqus_url: $location.absUrl()
-                }
+                // vm.disqusConfig = {
+                //     disqus_shortname: 'pauamarelo-1',
+                //     disqus_identifier: vm.noticia.idNoticia,
+                //     disqus_url: url
+                //     // disqus_url: $location.absUrl()
+                // }
 
-                // console.log(window.location.href)
+                // console.log(url)
             })
         }
         listar()
+
+
+        // Rolar para os comentários
+        vm.scrollToComments = function() {
+            $('html, body').animate({
+                scrollTop: $(".fb-comments").offset().top - 60
+            }, 300)
+        }
     })
 })()

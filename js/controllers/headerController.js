@@ -1,7 +1,7 @@
 (function() {
     'use strict'
 
-    var app = angular.module('myApp')
+    const app = angular.module('myApp')
 
     app.controller("headerCtrl", function($scope, $timeout, $state) {
         $scope.goToTop = function() {

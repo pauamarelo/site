@@ -1,7 +1,7 @@
 (function() {
     'use strict'
 
-    var app = angular.module('myApp')
+    const app = angular.module('myApp')
 
     app.run(function($rootScope, $transitions, $state) {
         $transitions.onEnter({}, function () { //mantém sempre no topo (obrigatório no uso do ui-router)
