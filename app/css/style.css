@@ -1,0 +1,573 @@
+@import 'loader.css';
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	font-family: 'Abel', sans-serif;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.fotos .row {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+	text-transform: uppercase;
+}
+
+a {
+	font-size: 18px !important;
+	text-decoration: none !important;
+}
+
+a.active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+p {
+	font-size: 18px;
+}
+
+.linha {
+	border: solid #667292 1px;
+	width: 100px;
+	margin-top: 5px;
+}
+
+.mt-15 {margin-top: 15px;}
+.mt-30 {margin-top: 30px;}
+.mt-50 {margin-top: 50px;}
+
+.mb-15 {margin-bottom: 15px;}
+.mb-30 {margin-bottom: 30px;}
+.mb-50 {margin-bottom: 50px;}
+
+.centraliza {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+
+/****** NAVBAR ******/
+
+.nav-wrapper {
+	background-color: #667292;
+}
+
+.nav-wrapper a {
+	color: #fff;
+}
+
+.brand-logo {
+	font-size: 30px !important;
+}
+
+.brand-logo.active {
+	background-color: transparent !important;
+}
+
+
+/****** CORPO ******/
+
+.parallax-container {
+	height: auto;
+	text-align: center;
+}
+
+.parallax-container .logo-pa img {
+	width: 400px;
+	margin: 0 auto;
+	display: block;
+}
+
+.parallax-container .logo-pa h1 {
+	color: #f0efef;
+	font-size: 50px;
+    font-family: 'Abel', sans-serif;
+}
+
+.parallax-container .logo-pa h3 {
+	color: #f0efef;
+	font-size: 30px;
+	font-family: 'Lobster', cursive;
+	text-transform: none;
+}
+
+.section p {
+	font-size: 20px;
+	text-align: justify;
+}
+
+
+/*** LINE ***/
+
+.line {
+	text-align: left;
+	color: #f0efef;
+}
+
+.card p {
+	text-align: center;
+	color: #000 !important;
+}
+
+.m2 {
+	width: 20% !important;
+}
+
+
+/*** EX-INTEGRANTES ***/
+
+.ex .btn-large {
+	background-color: #667292;
+	color: #fff;
+	margin-bottom: 30px;
+	text-transform:	uppercase;
+	font-size: 18px;
+}
+
+
+/*** MODAL ***/
+
+.modal-trigger {
+	z-index: 1 !important;
+}
+
+.modal h4 {
+	font-size: 30px;
+	text-align: center;
+}
+
+.modal .m3 img {
+	margin: 0 auto;
+	display: block;
+}
+
+.modal .rank {
+	width: 80px;
+	margin-top: 5px;
+	box-shadow: 0 0 15px 1px goldenrod;
+}
+
+.modal p {
+	margin: 0 auto 2px auto;
+	line-height: normal;
+	text-align: justify;
+}
+
+.over {
+	position: relative;
+	width: 100%;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	min-height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.over:hover .overlay {
+	background-color: rgba(0, 0, 0, 0.8);
+  	opacity: 1;
+}
+
+.text {
+	position: absolute;
+	padding: 5px;
+}
+
+.text p {
+	color: white;
+	font-size: 20px;
+}
+
+.tabs {
+	background-color: transparent;
+	margin-bottom: 10px;
+}
+
+.tabs li a {
+	color: #667292 !important;
+}
+
+.tabs .indicator {
+	border-bottom: 2px solid #667292 !important;
+}
+
+#config i,
+#config2 i,
+#config3 i,
+#config4 i,
+#config5 i,
+#config6 i {
+	font-size: 16px;
+	margin-right: 5px;
+}
+
+
+/*** MAPA ***/
+
+.mapa h3 {
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.mapa h4 {
+	text-align: center;
+}
+
+.linha.center {
+	border: solid #667292 1px;
+	width: 100px;
+	margin: 5px auto;
+	display: block;
+}
+
+.carousel {
+	margin-top: -50px;
+}
+
+.carousel-item {
+	width: 400px !important;
+}
+
+.carousel .indicators {
+	margin-bottom: 30px !important;
+}
+
+.download {
+	padding-top: 100px !important;
+}
+
+
+
+/****** PENEIRA ******/
+
+.peneira {
+	text-align: left;
+}
+
+.peneira h3 {
+	margin-top: 0;
+	padding: 15px;
+	background-color: rgba(0, 0, 0, 0.6);
+	text-align: center;
+	color: #fff;
+}
+
+.peneira .container {
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #fff;
+}
+
+.requisitos {
+	border-right: solid #999 1px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.requisitos h4 {
+	font-size: 30px;
+}
+
+.requisitos ul {
+	padding: 0 25px;
+	margin-top: -20px;
+}
+
+.requisitos li {
+	font-size: 18px;
+}
+
+.formulario .row {
+	padding: 0 25px;
+}
+
+.formulario h4 {
+	text-align: center;
+	font-size: 30px;
+}
+
+.formulario .input-field input:focus,
+.formulario .input-field textarea:focus {
+	border-bottom: 1px solid #667292 !important;
+	box-shadow: 0 1px 0 0 #667292 !important;
+}
+
+.input-field input:focus + label,
+.input-field textarea:focus + label {
+	color: #667292 !important;
+}
+
+.input-field .prefix {
+	color: #fff !important;
+}
+
+.formulario .btn {
+	background-color: #667292;
+}
+
+.input-field .dropdown-content {
+	height: 350px !important;
+}
+
+/* ESCONDE AS SETAS DO INPUT NUMBER */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+
+
+
+/****** FOOTER ******/
+
+.page-footer {
+	background-color: #667292;
+}
+
+footer .container .s6 {
+	margin-bottom: -20px;
+}
+
+footer p {
+	margin: 0;
+}
+
+footer a {
+	color: #b5e7a0;
+}
+
+footer li {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 50px;
+	width: 50px;
+	height: 50px;
+	transition: 0.3s;
+}
+
+footer li .fa {
+	font-size: 25px !important;
+}
+
+footer .steam:hover li {
+	background-color: #000;
+	transition: 0.3s;
+}
+
+footer .facebook:hover li {
+	background-color: #3b5998;
+	transition: 0.3s;
+}
+
+footer .youtube:hover li {
+	background-color: #ff0000;
+	transition: 0.3s;
+}
+
+footer .twitch:hover li {
+	background-color: #6441a5;
+	transition: 0.3s;
+}
+
+
+
+
+/****** GALERIA ******/
+
+.galeria .integrantes {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.galeria .integrantes label {
+	font-size: 18px;
+}
+
+.galeria .integrantes li {
+	display: inline-block;
+	padding: 10px;
+}
+
+.galeria .integrantes a {
+	padding: 10px 15px;
+	border-radius: 3px;
+	color: #667292;
+	transition: 0.3s;
+}
+
+.galeria .integrantes > li > a:hover,
+.galeria .integrantes .current {
+	background-color: #667292;
+	color: #fff;
+	transition: 0.3s;
+}
+
+.fotos .row {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    margin-right: 0px;
+    margin-left: 0;
+}
+
+.fotos img {
+	margin-top: 12px;
+	width: 100%;
+}
+
+
+
+.materialboxed {
+	cursor: pointer;
+}
+
+.materialboxed.active {
+	cursor: default;
+	margin-top: -10px;
+}
+
+.materialbox-caption {
+	font-size: 20px;
+}
+
+
+
+
+/*Notícias*/
+.noticias .box {
+	overflow: hidden;
+	width: 100%;
+	height: 150px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.noticias .box a {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.noticias .box img {
+	width: 100%;
+	transition: 0.2s;
+	display: block;
+  	height: auto;
+}
+.noticias .box:hover img {
+	width: calc(100% + 50px);
+	transition: 0.2s;
+	transform: rotate(3deg);
+}
+.noticias .box .overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	background-color: rgba(0,0,0,0.7);
+}
+.noticias .box .overlay:hover {
+	opacity: 1;
+}
+.noticias .box .overlay .fa {
+	color: #fff;
+	font-size: 24px;
+}
+
+.noticias a {
+	color: #667292;
+}
+.noticias a:hover {
+	color: #445070;
+}
+
+.noticias h3 {
+	font-size: 24px;
+	margin-top: 10px;
+}
+
+.noticias span {
+	font-size: 14px;
+	color: #aaa;
+}
+
+
+/*Página notícia*/
+.noticia .news-title {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.noticia .news-title h1 {
+	text-shadow: 1px 1px rgba(0,0,0,0.5);
+}
+
+.noticia .news-body {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.noticia .news-body p,
+.noticia .news-body a {
+	font-size: 22px !important;
+}
+
+.noticia .news-body img {
+	margin: 0 auto;
+	display: block;
+	max-width: 400px;
+}
+
+.noticia .news-body blockquote {
+	font-style: italic;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.noticia h3 {
+	font-size: 26px;
+	color: #667292;
+}
+
+.noticia span {
+	font-size: 16px;
+	color: #aaa;
+}
+
+
+/* Loading */
+.loading i {
+	font-size: 40px;
+	color: #333;
+}
