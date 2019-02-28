@@ -3,23 +3,24 @@
 
     const app = angular.module('myApp')
 
-    app.controller("noticiasCtrl", function($scope, $http) {
+    app.controller("noticiasCtrl", function($scope, $http, config) {
         const vm = this
-
-        const base = 'http://pauamarelo.000webhostapp.com/'
     
-        vm.dados = {}
-        vm.retorno = {}
         vm.loading = false
     
         function listar() {
             vm.loading = true
-            $http.get(base+'controller/listar.php')
+            $http.get(config.listarNoticiasConst)
             .then(function(response) {
                 vm.noticias = response.data
                 vm.loading = false
             })
         }
         listar()
+
+        vm.limiteNoticias = 10
+        vm.carregar = function() {
+            vm.limiteNoticias += 10
+        }
     })
 })()

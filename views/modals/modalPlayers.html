@@ -1,1 +1,49 @@
-<div id="modalPlayers" class="modal modal-fixed-footer"><div class="modal-content"><h4>{{vm.dados.nome}} "{{vm.dados.nick}}" {{vm.dados.sobrenome}}</h4><div class="row"><div class="col m3"><div class="over"><img class="z-depth-1 responsive-img" ng-src="{{vm.dados.modalImage}}"> <a target="_blank" ng-href="{{vm.dados.steam}}" class="overlay"><div class="text"><p><i class="fa fa-steam" aria-hidden="true"></i> {{vm.dados.nick}}</p></div></a></div></div><div class="col s12 m9"><ul tabs reload="allTabContentLoaded" class="tabs-fixed-width"><li class="tab col s3"><a href="#sobre">Sobre</a></li><li class="tab col s3"><a href="#config">Config</a></li><li class="tab col s3"><a href="#curiosidades">Curiosidades</a></li></ul><div id="sobre"><p><b>Função:</b> {{vm.dados.funcao}}</p><hr><p><b>Mapa:</b> {{vm.dados.mapa}}</p><hr><p><b>Armas:</b> {{vm.dados.armas}}</p><hr><p><b>Amigão:</b> {{vm.dados.amigao}}</p><hr><p class="skill"><b>Características:</b> {{vm.dados.caracteristicas}}</p><hr><p><b>Carreira:</b> {{vm.dados.carreira}}</p><img class="rank" src="images/ranks/{{vm.dados.patente}}.png"></div><div id="config"><p><i class="material-icons">mouse</i>{{vm.dados.mouse}}</p><hr><p><i class="material-icons">layers</i>{{vm.dados.mousepad}}</p><hr><p><i class="material-icons">headset</i>{{vm.dados.headset}}</p><hr><p><i class="material-icons">keyboard</i>{{vm.dados.keyboard}}</p><hr><p><i class="material-icons">desktop_mac</i>{{vm.dados.monitor}}</p></div><div id="curiosidades"><i class="fa fa-quote-left fa-3x fa-pull-left fa-border" aria-hidden="true"></i><p>{{vm.dados.curiosidades}}</p></div></div></div></div><div class="modal-footer"><a href="" class="modal-action modal-close waves-effect waves-red btn-flat">Fechar</a></div></div>
+<div id="modalPlayers" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>{{vm.dados.nome}} "{{vm.dados.nick}}" {{vm.dados.sobrenome}}</h4>
+        <div class="row">
+            <div class="col m3">
+                <div class="over">
+                    <img class="z-depth-1 responsive-img" ng-src="{{vm.dados.modalImage}}">
+                    <a target="_blank" ng-href="{{vm.dados.steam}}" class="overlay">
+                        <div class="text">
+                            <p><i class="fa fa-steam" aria-hidden="true"></i> {{vm.dados.nick}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>            
+            <div class="col s12 m9">
+                <ul tabs reload="allTabContentLoaded" class="tabs-fixed-width">
+                    <li class="tab col s3"><a href="#sobre">Sobre</a></li>
+                    <li class="tab col s3"><a href="#config">Config</a></li>
+                    <li class="tab col s3"><a href="#curiosidades">Curiosidades</a></li>
+                </ul>
+
+
+                <div id="sobre">
+                    <p><b>Função:</b> {{vm.dados.funcao}}</p><hr>
+                    <p><b>Mapa:</b> {{vm.dados.mapa}}</p><hr>
+                    <p><b>Armas:</b> {{vm.dados.armas}}</p><hr>
+                    <p><b>Amigão:</b> {{vm.dados.amigao}}</p><hr>
+                    <p class="skill"><b>Características:</b> {{vm.dados.caracteristicas}}</p><hr>
+                    <p><b>Carreira:</b> {{vm.dados.carreira}}</p>
+                    <img class="rank" src="images/ranks/{{vm.dados.patente}}.png">
+                </div>
+                <div id="config">
+                    <p><i class="material-icons">mouse</i>{{vm.dados.mouse}}</p><hr>
+                    <p><i class="material-icons">layers</i></i>{{vm.dados.mousepad}}</p><hr>
+                    <p><i class="material-icons">headset</i>{{vm.dados.headset}}</p><hr>
+                    <p><i class="material-icons">keyboard</i>{{vm.dados.keyboard}}</p><hr>
+                    <p><i class="material-icons">desktop_mac</i>{{vm.dados.monitor}}</p>
+                </div>
+                <div id="curiosidades">
+                    <i class="fa fa-quote-left fa-3x fa-pull-left fa-border" aria-hidden="true"></i>
+                    <p>{{vm.dados.curiosidades}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="" class="modal-action modal-close waves-effect waves-red btn-flat">Fechar</a>
+    </div>
+</div>

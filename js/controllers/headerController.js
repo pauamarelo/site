@@ -4,7 +4,9 @@
     const app = angular.module('myApp')
 
     app.controller("headerCtrl", function($scope, $timeout, $state) {
-        $scope.goToTop = function() {
+        const vm = this
+
+        vm.goToTop = function() {
             if ($state.is('inicio')) {
                 $('html, body').animate({
                     scrollTop: 0
@@ -14,7 +16,7 @@
             }
         }
     
-        $scope.goToLine = function() {
+        vm.goToLine = function() {
             if ($state.is('inicio')) {
                 $('html, body').animate({
                     scrollTop: $("#line").offset().top - 60
@@ -29,7 +31,7 @@
             }
         }
     
-        $scope.goToMapa = function() {
+        vm.goToMapa = function() {
             if ($state.is('inicio')) {
                 $('html, body').animate({
                     scrollTop: $("#mapa").offset().top - 60
@@ -44,7 +46,7 @@
             }
         }
     
-        $scope.goToPeneira = function() {
+        vm.goToPeneira = function() {
             if ($state.is('inicio')) {
                 $('html, body').animate({
                     scrollTop: $("#peneira").offset().top - 60

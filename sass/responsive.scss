@@ -37,14 +37,16 @@ and (max-width: 991px) {
 
     // Line
 
-    .m2 {
-        width: 100% !important;
-    }
-
-    .card {
-        width: 70%;
-        margin: 0 auto  20px auto;
-        display: block;
+    .line {
+        .card {
+            width: 70%;
+            margin: 0 auto  20px auto;
+            display: block;
+        }
+        
+        .m2 {
+            width: 100% !important;
+        }
     }
 
 

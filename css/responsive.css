@@ -93,6 +93,9 @@
     width: 100% !important;
     transform: none !important;
   }
+  .noticias .btn-large {
+    width: 100%;
+  }
   .noticia .news-body img {
     max-width: 100% !important;
   }

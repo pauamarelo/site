@@ -519,6 +519,14 @@ input::-webkit-inner-spin-button {
         color: #aaa;
     }
 
+    .btn-large {
+        background-color: $primary-color;
+        font-size: 20px;
+        margin: 0 auto;
+        display: block;
+        width: 200px;
+    }
+
     .box {
         overflow: hidden;
         width: 100%;

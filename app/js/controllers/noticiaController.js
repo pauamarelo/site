@@ -3,20 +3,16 @@
 
     const app = angular.module('myApp')
 
-    app.controller("noticiaCtrl", function($scope, $http, $stateParams, $location) {
+    app.controller("noticiaCtrl", function($scope, $http, $stateParams, $location, config) {
         const vm = this
-
-        const base = 'http://pauamarelo.000webhostapp.com/@/'
     
-        vm.dados = {}
-        vm.retorno = {}
         const url = $stateParams.url
         const shortname = 'pauamarelo-1'
 
         vm.link = $location.absUrl()
         
         function listar() {
-            $http.get(base+'controller/listar.php')
+            $http.get(config.listarNoticiasConst)
             .then(function(response) {
                 vm.noticias = response.data
         
