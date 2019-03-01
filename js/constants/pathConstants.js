@@ -5,7 +5,7 @@
 
     const json = 'json/'
     const base = 'controller/'
-    // const base = 'http://pauamarelo.000webhostapp.com/@/admin/controller/'
+    // const base = 'http://pauamarelo.000webhostapp.com/controller/'
 
     app.constant('config', {
         // noticiasConst: base+'class.conteudos.php',
