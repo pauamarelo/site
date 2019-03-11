@@ -1,7 +1,42 @@
-<div class="noticia"><div class="parallax-container news-title"><div parallax><img ng-src="http://pauamarelo.000webhostapp.com/@/admin/.//{{vm.noticia.capa}}" style="filter: blur(5px);"></div><div class="logo-pa"><h1>{{:: vm.noticia.titulo}}</h1></div></div><div class="container mt-30 mb-30"><div class="row"><div class="col s12 m10 offset-m1 news-body"><p><span>Postado em: {{:: vm.noticia.dtNoticia | date: 'dd/MM/yyyy'}} por {{:: vm.noticia.autor}}</span></p><p ng-bind-html="vm.noticia.conteudo"></p></div></div><h3>Comentários</h3><dir-disqus config="vm.disqusConfig" ng-if="vm.noticia"></dir-disqus><!-- <fb-comments
+<div class="noticia">
+	<div class="parallax-container news-title">
+        <div parallax><img ng-src="http://pauamarelo.000webhostapp.com/@/admin/.//{{vm.noticia.capa}}" style="filter: blur(5px);"></div>
+        <div class="logo-pa">
+            <h1>{{:: vm.noticia.titulo}}</h1>
+        </div>
+    </div>
+
+
+    <div class="container mt-30 mb-30">
+        <div class="row">
+        	<div class="col s12 m10 offset-m1 news-body">
+                <p>
+                    <span>Postado em: {{:: vm.noticia.dtNoticia | date: 'dd/MM/yyyy'}} por {{:: vm.noticia.autor}}</span>
+                </p>
+                <p ng-bind-html="vm.noticia.conteudo"></p>
+            </div>
+        </div>
+        
+        
+        <h3>Comentários</h3>
+        <dir-disqus config="vm.disqusConfig" ng-if="vm.noticia"></dir-disqus>
+        <!-- <fb-comments
             href="{{vm.link}}"
             numposts="5"
             colorscheme="light"
             mobile="true"
             width="100%">
-        </fb-comments> --></div></div>
+        </fb-comments> -->
+    </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">share</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating twitter" onClick="alert('Ninguém usa twitter n00b -_-')"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="btn-floating facebook" onClick="alert('Ainda não ta pronto newba! xD')"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="btn-floating whatsapp" href="https://api.whatsapp.com/send?text={{vm.noticia.titulo}} http://clanpauamarelo.com/noticia/{{vm.noticia.urlNoticia}}" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+        </ul>
+    </div>
+</div>

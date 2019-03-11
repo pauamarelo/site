@@ -4,9 +4,11 @@
 $font: 'Abel', sans-serif;
 $primary-color: #667292;
 $steam: #000;
+$whatsapp: #25d366;
 $facebook: #3b5998;
 $youtube: #ff0000;
 $twitch: #6441a5;
+$twitter: #1da1f2;
 
 // Presets
 html, body {
@@ -479,6 +481,35 @@ input::-webkit-inner-spin-button {
     //     margin-left: 0;
     // }
 
+    .gallery-filter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li {
+            width: 100%;
+            text-align: center;
+            margin-right: 15px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+            
+            a {
+                width: 100%;
+                display: block;
+                background-color: transparent;
+                color: $primary-color;
+                border: solid 1px $primary-color;
+
+                &.active {
+                    background-color: $primary-color;
+                    color: #fff;
+                } 
+            }
+        }
+    }
+
     img {
         margin-top: 12px;
         width: 100%;
@@ -527,55 +558,78 @@ input::-webkit-inner-spin-button {
         width: 200px;
     }
 
-    .box {
-        overflow: hidden;
-        width: 100%;
-        height: 150px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    // .box {
+    //     overflow: hidden;
+    //     width: 100%;
+    //     height: 150px;
+    //     position: relative;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
 
-        a {
-            width: 100%;
+    //     a {
+    //         width: 100%;
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: center;
+    //     }
+
+    //     img {
+    //         width: 100%;
+    //         transition: 0.2s;
+    //         display: block;
+    //           height: auto;
+    //     }
+
+    //     .overlay {
+    //         position: absolute;
+    //         top: 0;
+    //         bottom: 0;
+    //         left: 0;
+    //         right: 0;
+    //         height: 100%;
+    //         width: 100%;
+    //         opacity: 0;
+    //         background-color: rgba(0,0,0,0.7);
+
+    //         .fa {
+    //             color: #fff;
+    //             font-size: 24px;
+    //         }
+            
+    //         &:hover {
+    //             opacity: 1;
+    //         }
+    //     }
+
+    //     &:hover {
+    //         img {
+    //             width: calc(100% + 50px);
+    //             transition: 0.2s;
+    //             transform: rotate(3deg);
+    //         }
+    //     }
+    // }
+    .card {
+        .card-image {
+            max-width: 30%;
+            height: 230px !important;
+            overflow: hidden !important;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        img {
-            width: 100%;
-            transition: 0.2s;
-            display: block;
-              height: auto;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 0;
-            background-color: rgba(0,0,0,0.7);
-
-            .fa {
-                color: #fff;
-                font-size: 24px;
-            }
-            
-            &:hover {
-                opacity: 1;
+        .card-content {
+            p {
+                text-align: left;
             }
         }
 
-        &:hover {
-            img {
-                width: calc(100% + 50px);
-                transition: 0.2s;
-                transform: rotate(3deg);
+        .card-action {
+            p {
+                margin: 0;
+                text-align: left;
             }
         }
     }
@@ -627,6 +681,22 @@ input::-webkit-inner-spin-button {
             font-style: italic;
             margin-top: 50px;
             margin-bottom: 50px;
+        }
+    }
+
+    .fixed-action-btn {
+        ul {
+            li {
+                .whatsapp {
+                    background-color: $whatsapp;
+                }
+                .facebook {
+                    background-color: $facebook;
+                }
+                .twitter {
+                    background-color: $twitter;
+                }
+            }
         }
     }
 }
