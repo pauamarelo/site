@@ -26,14 +26,6 @@
             vm.limiteNoticias += 10
         }
 
-        function listarIntegrantes() {
-            $http.get(config.integrantes)
-            .then((response) => {
-                vm.integrantes = response.data.data
-            })
-        }
-        listarIntegrantes()
-
 
         // Date picker config
         vm.month = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']

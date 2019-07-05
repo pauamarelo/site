@@ -52,7 +52,8 @@
 					</div>
 					<div input-field class="col s12 mt-15">
 						<select ng-model="vm.autorFilter" material-select watch>
-							<option ng-repeat="x in vm.integrantes">{{x.nome}} "{{x.nick}}" {{x.sobrenome}}</option>
+							<option ng-value="''">Todos</option>
+							<option ng-repeat="x in vm.noticias | unique:'autor'">{{x.autor}}</option>
 						</select>
 						<label>Autor</label>
 					</div input-field>

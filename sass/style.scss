@@ -87,10 +87,16 @@ input::-webkit-inner-spin-button {
     }
 }
 
-// Facebook comments
-.fb-comments {
-    iframe {
-        width: 100% !important;
+.dropdown-content {
+    height: auto !important;
+    max-height: 350px !important;
+    
+    span {
+        color: $primary-color;
+
+        &.disabled {
+            color: rgba(0,0,0,0.3);
+        }
     }
 }
 
@@ -395,9 +401,18 @@ input::-webkit-inner-spin-button {
         .prefix {
             color: #fff !important;
         }
-
-        .dropdown-content {
-            height: 350px !important;
+    }
+    
+    .dropdown-content {
+        height: auto !important;
+        max-height: 350px !important;
+        
+        span {
+            color: $primary-color;
+    
+            &.disabled {
+                color: rgba(0,0,0,0.3);
+            }
         }
     }
 
@@ -543,6 +558,19 @@ input::-webkit-inner-spin-button {
 
 // Notícias
 .noticias {
+    .dropdown-content {
+        height: auto !important;
+        max-height: 350px !important;
+        
+        span {
+            color: $primary-color;
+    
+            &.disabled {
+                color: rgba(0,0,0,0.3);
+            }
+        }
+    }
+
     a {
         color: $primary-color;
 
@@ -605,6 +633,7 @@ input::-webkit-inner-spin-button {
             .box-content {            
                 p {
                     text-align: left;
+                    color: #333;
                 }
             }
     
