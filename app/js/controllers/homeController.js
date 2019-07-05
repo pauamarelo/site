@@ -87,12 +87,5 @@
                 vm.isLoading = false
             })
         }
-
-        function loadMaterialize() {
-            $(document).ready(function(){
-                $('.parallax').parallax()
-            })
-        }
-        loadMaterialize()
     })
 })()
