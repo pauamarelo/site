@@ -74,18 +74,25 @@
             $http.post(config.inscricao, objData)
             .then((response) => {
                 if(response.data.status) {
-                    toaster.success('Sucesso!', response.data.msg)
+                    Materialize.toast(response.data.msg, 6000)
                     vm.peneira = {}
                     vm.isLoading = false
                 } else {
-                    toaster.error('Erro', response.data.msg)
+                    Materialize.toast(response.data.msg, 6000)
                     vm.isLoading = false
                 }
             })
             .catch((error) => {
-                toaster.error('Erro', error.data)
+                Materialize.toast(error.data, 6000)
                 vm.isLoading = false
             })
         }
+
+        function loadMaterialize() {
+            $(document).ready(function(){
+                $('.parallax').parallax()
+            })
+        }
+        loadMaterialize()
     })
 })()
