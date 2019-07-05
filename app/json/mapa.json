@@ -1,0 +1,20 @@
+{
+	"lista": [
+		{
+			"id": "one",
+			"imagem": "images/mapa1.jpg"
+		},
+		{
+			"id": "two",
+			"imagem": "images/mapa2.jpg"
+		},
+		{
+			"id": "three",
+			"imagem": "images/mapa3.jpg"
+		},
+		{
+			"id": "four",
+			"imagem": "images/mapa4.jpg"
+		}
+	]
+}

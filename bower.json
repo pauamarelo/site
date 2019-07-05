@@ -1,0 +1,20 @@
+{
+  "name": "pauamarelo",
+  "authors": [
+    "Bernardo Sampaio"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.100.2"
+  }
+}

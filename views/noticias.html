@@ -1,0 +1,94 @@
+<div class="noticias">
+	<div class="parallax-container scrollspy">
+        <div parallax><img src="images/galeria.jpg" style="filter: blur(5px);"></div>
+        <div class="logo-pa">
+            <h1 class="wow fadeInLeft">Notícias</h1>
+        </div>
+    </div>
+
+    <div class="container mt-50 mb-30">
+        <div class="row">
+			<div class="centraliza" ng-if="vm.loading">
+				<div class="preloader-wrapper big active">
+					<div class="spinner-layer spinner-blue-only">
+						<div class="circle-clipper left">
+							<div class="circle"></div>
+						</div>
+						<div class="gap-patch">
+							<div class="circle"></div>
+						</div>
+						<div class="circle-clipper right">
+							<div class="circle"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m3 push-m9 filtros">
+				<h3>Filtrar por</h3>
+				<div class="row">
+					<div input-field class="col s12">
+						<input type="text" ng-model="vm.textFilter" length="">
+						<label>Texto</label>
+					</div>
+					<div input-field class="col s12">
+							<label for="inputCreated">Data</label>
+							<input input-date
+								type="text"
+								name="created"
+								id="inputCreated"
+								ng-model="vm.dateFilter"
+								container=""
+								format="yyyy-mm-dd"
+								months-full="{{vm.month}}"
+								months-short="{{vm.monthShort}}"
+								weekdays-full="{{vm.weekdaysFull}}"
+								weekdays-short="{{vm.weekdaysShort}}"
+								weekdays-letter="{{vm.weekdaysLetter}}"
+								today="vm.today"
+								first-day="1"
+								clear="vm.clear"
+								close="vm.close"
+								select-years="15">
+					</div>
+					<div input-field class="col s12 mt-15">
+						<select ng-model="vm.autorFilter" material-select watch>
+							<option ng-repeat="x in vm.integrantes">{{x.nome}} "{{x.nick}}" {{x.sobrenome}}</option>
+						</select>
+						<label>Autor</label>
+					</div input-field>
+				</div>
+			</div>
+        	<div class="col s12 m8 pull-m3">
+				<div class="row">
+					<div class="col s12 mb-30 wow fadeIn" ng-repeat="x in vm.noticiasFiltered = (vm.noticias | filter:{'ativo':true} | filter:{'createdAt':vm.dateFilter} | filter:{'autor':vm.autorFilter} | filter:vm.textFilter | orderBy: '-createdAt' | limitTo: vm.limiteNoticias)" ng-if="!vm.loading">
+						<a ui-sref="noticia({url: x.url})">
+							<div class="box-noticia">
+								<div class="row">
+									<div class="col s12 l3">
+										<div class="box-image">
+											<img ng-src="http://localhost:3000/{{:: x.img}}">
+										</div>
+									</div>
+									<div class="col s12 l9">
+										<div class="box-stacked">
+											<div class="box-content">
+												<h3>{{:: x.titulo | limiteTitulo}}</h3>
+												<p ng-bind-html="x.conteudo | limite"></p>
+											</div>
+											<div class="box-action">
+												<p><span>Postado em: {{:: x.createdAt | date: 'dd/MM/yyyy'}} por {{:: x.autor}}</span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 mb-15">
+				<button type="button" class="waves-effect waves-light btn-large" ng-click="vm.carregar()" ng-if="vm.limiteNoticias <= vm.noticiasFiltered.length">Ver mais</button>
+			</div>
+        </div>
+    </div>
+</div>
