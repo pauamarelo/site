@@ -115,7 +115,13 @@ input::-webkit-inner-spin-button {
 }
 
 .parallax-container {
+  height: auto;
   text-align: center;
+}
+
+.parallax-container .parallax img {
+  position: absolute !important;
+  z-index: 9999 !important;
 }
 
 .parallax-container .logo-pa img {

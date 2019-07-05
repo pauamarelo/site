@@ -216,4 +216,14 @@ and (max-width: 991px) {
             }
         }
     }
+
+
+
+    // fix bug parallax mobile
+    #line {
+        background: url('../images/bg.png') no-repeat center center / cover;
+    }
+    #peneira {
+        background: url('../images/peneira.jpg') no-repeat center center / cover;
+    }
 }

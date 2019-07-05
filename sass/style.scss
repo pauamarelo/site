@@ -125,8 +125,15 @@ input::-webkit-inner-spin-button {
 
 // Corpo
 .parallax-container {
-	// height: auto;
+	height: auto;
     text-align: center;
+
+    .parallax {
+        img {
+            position: absolute !important;
+            z-index: 9999 !important;
+        }
+    }
     
     .logo-pa {
         img {
@@ -339,7 +346,6 @@ input::-webkit-inner-spin-button {
 
 
 // Peneira
-
 .peneira {
     text-align: left;
     
