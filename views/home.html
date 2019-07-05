@@ -31,12 +31,12 @@
                     <div class="card" id="{{player.nick}}">
                         <div class="card-image">
                             <div class="box-img">
-                                <img ng-src="{{:: player.foto}}">
+                                <img ng-src="{{player.foto}}">
                             </div>
                             <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" data-target="modalPlayers" ng-click="vm.pegaDados(player)" modal><i class="material-icons">add</i></a>
                         </div>
                         <div class="card-content">
-                            <p>{{:: player.nome}} <br>"{{:: player.nick}}"<br> {{:: player.sobrenome}}</p>
+                            <p>{{player.nome}} <br>"{{player.nick}}"<br> {{player.sobrenome}}</p>
                         </div>
                     </div>
                 </div>
