@@ -4,12 +4,9 @@
     const app = angular.module('myApp')
 
     const json = 'json/'
-    // const base = 'controller/'
-    // const base = 'http://pauamarelo.000webhostapp.com/controller/'
-    const base = 'http://localhost:4000/oapi/'
+    const base = 'https://pauamarelo.herokuapp.com/oapi/'
 
     app.constant('config', {
-        // noticiasConst: base+'class.conteudos.php',
         noticias: base+'news',
         galeriaConst: json+'galeria.json',
         playersConst: json+'players.json',
