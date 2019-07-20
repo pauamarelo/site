@@ -3,7 +3,7 @@
 
     const app = angular.module('myApp')
 
-    app.controller("homeCtrl", function($scope, $http, config, toaster) {
+    app.controller("homeCtrl", function($scope, $http, config) {
         const vm = this
 
         vm.hoje = new Date().getFullYear()

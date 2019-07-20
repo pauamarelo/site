@@ -5,6 +5,5 @@ const app = angular.module('myApp', [
     'duScroll',
     'angularLazyImg',
     'angularUtils.directives.dirDisqus',
-    'toaster',
     'angular.filter'
 ])

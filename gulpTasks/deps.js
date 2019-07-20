@@ -16,10 +16,11 @@ gulp.task('deps.js', () => {
         'node_modules/angular-ui-router/release/angular-ui-router.min.js',
         'node_modules/angular-materialize/src/angular-materialize.js',
         'node_modules/angular-scroll/angular-scroll.min.js',
-        'node_modules/angularjs-toaster/toaster.min.js',
         'node_modules/angular-lazy-img/dist/angular-lazy-img.min.js',
         'node_modules/angular-utils-disqus/dirDisqus.js',
-        'node_modules/wowjs/dist/wow.min.js'
+        'node_modules/wowjs/dist/wow.min.js',
+        'node_modules/oclazyload/dist/ocLazyLoad.min.js',
+        'node_modules/angular-filter/dist/angular-filter.min.js'
     ])
     .pipe(uglify())
     .pipe(concat('deps.min.js'))
@@ -30,8 +31,7 @@ gulp.task('deps.css', () => {
     return gulp.src([
         'bower_components/materialize/dist/css/materialize.min.css',
         'node_modules/animate.css/animate.min.css',
-        'node_modules/font-awesome/css/font-awesome.min.css',
-        'node_modules/angularjs-toaster/toaster.min.css'
+        'node_modules/font-awesome/css/font-awesome.min.css'
     ])
     .pipe(uglifycss({ 'uglyComments': true }))
     .pipe(concat('deps.min.css'))
