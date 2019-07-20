@@ -5,5 +5,6 @@ const app = angular.module('myApp', [
     'duScroll',
     'angularLazyImg',
     'angularUtils.directives.dirDisqus',
-    'angular.filter'
+    'angular.filter',
+    'ngMeta'
 ])

@@ -3,7 +3,7 @@
 
     const app = angular.module('myApp')
 
-    app.controller("noticiaCtrl", function($scope, $http, $stateParams, $location, config) {
+    app.controller("noticiaCtrl", function($scope, $http, $stateParams, $location, config, ngMeta) {
         const vm = this
     
         const url = $stateParams.url
@@ -24,6 +24,9 @@
                     // disqus_url: 'http://clanpauamarelo.com/noticia/'+url
                     disqus_url: $location.absUrl()
                 }
+                
+                ngMeta.setTag('author', vm.noticia.autor)
+                ngMeta.setTag('image', vm.noticia.img)
             })
         }
         listar()

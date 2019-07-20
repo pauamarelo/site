@@ -1,32 +1,38 @@
 const app = angular.module('myApp')
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
-        .state("inicio", {
-            url: "/",
-            templateUrl: "views/home.html",
-            controller: "homeCtrl",
-            controllerAs: "vm"
+        .state('inicio', {
+            url: '/',
+            templateUrl: 'views/home.html',
+            controller: 'homeCtrl',
+            controllerAs: 'vm'
         })
-        .state("galeria", {
-            url: "/galeria",
-            templateUrl: "views/galeria.html",
-            controller: "galeriaCtrl",
-            controllerAs: "vm"
+        .state('galeria', {
+            url: '/galeria',
+            templateUrl: 'views/galeria.html',
+            controller: 'galeriaCtrl',
+            controllerAs: 'vm'
         })
-        .state("noticias", {
-            url: "/noticias",
-            templateUrl: "views/noticias.html",
-            controller: "noticiasCtrl",
-            controllerAs: "vm"
+        .state('noticias', {
+            url: '/noticias',
+            templateUrl: 'views/noticias.html',
+            controller: 'noticiasCtrl',
+            controllerAs: 'vm'
         })
-        .state("noticia", {
-            url: "/noticia/:url",
-            templateUrl: "views/noticia.html",
-            controller: "noticiaCtrl",
-            controllerAs: "vm"
+        .state('noticia', {
+            url: '/noticia/:url',
+            templateUrl: 'views/noticia.html',
+            controller: 'noticiaCtrl',
+            controllerAs: 'vm',
+            data: {
+                'meta': {
+                    'og:image': 'http://clanpauamarelo.com/images/logo.png',
+                    'author': 'PAU AMARELO'
+                }
+            }
         });
 
     $locationProvider.html5Mode(true);

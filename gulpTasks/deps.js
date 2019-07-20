@@ -20,7 +20,8 @@ gulp.task('deps.js', () => {
         'node_modules/angular-utils-disqus/dirDisqus.js',
         'node_modules/wowjs/dist/wow.min.js',
         'node_modules/oclazyload/dist/ocLazyLoad.min.js',
-        'node_modules/angular-filter/dist/angular-filter.min.js'
+        'node_modules/angular-filter/dist/angular-filter.min.js',
+        'node_modules/ng-meta/dist/ngMeta.min.js'
     ])
     .pipe(uglify())
     .pipe(concat('deps.min.js'))

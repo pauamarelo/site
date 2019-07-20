@@ -3,7 +3,7 @@
 
     const app = angular.module('myApp')
 
-    app.run(function($rootScope, $transitions, $state) {
+    app.run(function($rootScope, $transitions, $state, ngMeta) {
         $transitions.onEnter({}, function () { //mantém sempre no topo (obrigatório no uso do ui-router)
             document.body.scrollTop = document.documentElement.scrollTop = 0;
             $('body').addClass('animated fadeIn')
@@ -13,6 +13,8 @@
         })
     
         new WOW().init()
+
+        ngMeta.init()
     
         $rootScope.$state = $state
     })
