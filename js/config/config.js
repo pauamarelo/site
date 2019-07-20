@@ -1,26 +1,44 @@
 const app = angular.module('myApp')
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/')
 
     $stateProvider
         .state('inicio', {
             url: '/',
             templateUrl: 'views/home.html',
             controller: 'homeCtrl',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            data: {
+                'meta': {
+                    'og:image': 'http://clanpauamarelo.com/images/logo.png',
+                    'title': 'PAU AMARELO | O Maior Clan da Parte Sul/Sudeste do Brasil'
+                }
+            }
         })
         .state('galeria', {
             url: '/galeria',
             templateUrl: 'views/galeria.html',
             controller: 'galeriaCtrl',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            data: {
+                'meta': {
+                    'og:image': 'http://clanpauamarelo.com/images/logo.png',
+                    'title': 'Galeria | PAU AMARELO'
+                }
+            }
         })
         .state('noticias', {
             url: '/noticias',
             templateUrl: 'views/noticias.html',
             controller: 'noticiasCtrl',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            data: {
+                'meta': {
+                    'og:image': 'http://clanpauamarelo.com/images/logo.png',
+                    'title': 'Notícias | PAU AMARELO'
+                }
+            }
         })
         .state('noticia', {
             url: '/noticia/:url',
@@ -30,10 +48,11 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             data: {
                 'meta': {
                     'og:image': 'http://clanpauamarelo.com/images/logo.png',
+                    'title': 'PAU AMARELO',
                     'author': 'PAU AMARELO'
                 }
             }
-        });
+        })
 
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true)
 })

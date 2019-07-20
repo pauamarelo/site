@@ -27,6 +27,7 @@
                 
                 ngMeta.setTag('author', vm.noticia.autor)
                 ngMeta.setTag('image', vm.noticia.img)
+                ngMeta.setTitle(vm.noticia.titulo+' | PAU AMARELO')
             })
         }
         listar()
