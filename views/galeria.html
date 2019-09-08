@@ -17,8 +17,19 @@
             
             <div class="row">
                 <div class="col s12 m3 mb-15" ng-repeat="x in vm.galeria | filter:{'integrante':vm.playerActive}">
-                    <div class="box-img">
+                    <!-- <div class="box-img">
                         <img materialboxed src="images/loaader_circle_by_gleb.gif" lazy-img='{{x.foto}}' class="materialboxed" data-caption="{{:: x.legenda}}">
+                    </div> -->
+                    <div class="card">
+                        <div class="card-image">
+                            <div class="box-img">
+                                <!-- <img materialboxed src="images/loaader_circle_by_gleb.gif" lazy-img='{{x.foto}}' class="materialboxed" data-caption="{{:: x.legenda}}"> -->
+                                <img materialboxed ng-src='{{x.foto}}' class="materialboxed" data-caption="{{:: x.legenda}}">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p style="text-align: center;">{{:: x.legenda | limiteGaleria}}</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -545,6 +545,25 @@ input::-webkit-inner-spin-button {
             width: 100%;
         }
     }
+
+    .card {
+        height: 300px;
+
+        .card-image {
+            height: 200px;
+        }
+
+        .card-content {
+            height: calc(100% - 200px);
+            display: flex;
+            align-items: center;
+            justify-items: center;
+
+            p {
+                width: 100%;
+            }
+        }
+    }
 }
 
 .materialboxed {
