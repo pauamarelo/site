@@ -27,7 +27,7 @@
         <!--PLAYERS-->
             <div class="row">
 
-                <div class="col s12 m2 box-integrante wow fadeIn" data-wow-delay="0.{{$index}}s" ng-repeat="player in vm.players">
+                <div class="col s12 m2 box-integrante wow fadeIn" data-wow-delay="0.{{$index}}s" ng-repeat="player in vm.players | filter:{'ativo':true}">
                     <div class="card" id="{{player.nick}}">
                         <div class="card-image">
                             <div class="box-img">
