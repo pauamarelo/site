@@ -1,6 +1,6 @@
 <!--CONTEUDO-->
 <div class="parallax-container" id="top">
-    <div parallax><img src="images/banner.jpg"></div>
+    <div class="parallax"><img src="images/banner.jpg"></div>
     <div class="logo-pa">
         <img src="images/logo.png" class="wow fadeIn">
         <h1 class="wow fadeInLeft">PAU AMARELO</h1>
@@ -17,7 +17,7 @@
 </div>
 
 <div class="parallax-container" id="line">
-    <div parallax><img src="images/bg.png" style="filter: blur(5px);"></div>
+    <div class="parallax"><img src="images/bg.png" style="filter: blur(5px);"></div>
 
 <!--LINE UP-->
     <div class="line">
@@ -33,7 +33,7 @@
                             <div class="box-img">
                                 <img ng-src="{{player.foto}}">
                             </div>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" data-target="modalPlayers" ng-click="vm.pegaDados(player)" modal><i class="material-icons">add</i></a>
+                            <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" data-target="modalPlayers" ng-click="vm.pegaDados(player)"><i class="material-icons">add</i></a>
                         </div>
                         <div class="card-content">
                             <p>{{player.nome}} <br>"{{player.nick}}"<br> {{player.sobrenome}}</p>
@@ -46,7 +46,7 @@
     </div>
 
     <div class="container ex">
-        <a class="waves-effect waves-light btn-large modal-trigger" data-target="modalExIntegrantes" modal>Ex-integrantes</a>
+        <a class="waves-effect waves-light btn-large modal-trigger" data-target="modalExIntegrantes">Ex-integrantes</a>
     </div>
 </div>
 
@@ -59,22 +59,26 @@
 
 <!--MAPA-->
 <div class="section white mapa" id="mapa">
-    <div class="row container">
-        <h3 class="header wow fadeInDown">Um mapa feito por quem entende<p class="linha center"></p></h3>
-        <div carousel indicators="true" class="col s12 m6 wow fadeInLeft" ng-if="vm.carousel">
-            <a class="carousel-item" ng-repeat="x in vm.mapa" href="#{{x.id}}!"><img ng-src="{{x.imagem}}"></a>
-        </div>
-
-        <div class="col s12 m6 download wow fadeInRight">
-            <h4>Faça já o seu<h4>
-            <a href="https://pauamarelo.000webhostapp.com/@/aim_pauamarelo_beta_v2.zip" target="_blank"><h4>Download</h4></a>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h3 class="header wow fadeInDown">Um mapa feito por quem entende<p class="linha center"></p></h3>
+            </div>
+            <div class="carousel col s12 m6 wow fadeInLeft" ng-if="vm.carousel">
+                <a class="carousel-item" ng-repeat="x in vm.mapa" href="#{{x.id}}!"><img ng-src="{{x.imagem}}"></a>
+            </div>
+    
+            <div class="col s12 m6 download wow fadeInRight">
+                <h4>Faça já o seu<h4>
+                <a href="https://pauamarelo.000webhostapp.com/@/aim_pauamarelo_beta_v2.zip" target="_blank"><h4>Download</h4></a>
+            </div>
         </div>
     </div>
 </div>
 
 <!--PENEIRA-->
-<div class="parallax-container peneira" id="peneira">
-    <div parallax><img src="images/peneira.jpg" style="filter: blur(5px);"></div>
+<div class="parallax-container container-peneira" id="peneira">
+    <div class="parallax"><img src="images/peneira.jpg" style="filter: blur(5px);"></div>
     <h3 class="wow fadeIn">Peneira Pau amarelo</h3>
 
     <div class="container wow fadeIn">
@@ -109,7 +113,7 @@
                         </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">star</i>
-                            <select class="validate" ng-model="vm.peneira.patente" material-select watch>
+                            <select class="validate" ng-model="vm.peneira.patente">
                                 <option selected disabled value="">Patente</option>
                                 <option ng-repeat="x in vm.patentes" value="{{x.patente}}">{{x.patente}}</option>
                             </select>
@@ -119,7 +123,7 @@
                             <textarea id="textarea1" ng-model="vm.peneira.mensagem" class="materialize-textarea" data-length="1024" minlength="3" required="required"></textarea>
                             <label for="textarea1" data-error="Inválido">Mensagem</label>
                         </div>
-                        <button class="btn waves-effect waves-light right btn-large" type="submit" style="margin-top: 25px;">
+                        <button class="btn waves-effect waves-light right btn-large" type="submit" ng-disabled="vm.isLoading" style="margin-top: 25px;">
                             <span ng-if="!vm.isLoading">
                                 Enviar
                                 <i class="material-icons right">send</i>

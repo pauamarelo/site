@@ -5,6 +5,13 @@
 
     app.controller("noticiaCtrl", function($scope, $http, $stateParams, $location, config, ngMeta) {
         const vm = this
+
+        $(document).ready(function(){
+            setTimeout(() => {
+                $('.sidenav').sidenav()
+                $('.parallax').parallax()
+            }, 300)
+        })
     
         const url = $stateParams.url
         const shortname = 'pauamarelo-1'

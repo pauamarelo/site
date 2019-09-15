@@ -3,8 +3,22 @@
 
     const app = angular.module('myApp')
 
-    app.controller("homeCtrl", function($scope, $http, config) {
+    app.controller("homeCtrl", function($scope, $http, config, $mdToast, $log) {
         const vm = this
+
+        $(document).ready(function(){
+            setTimeout(() => {
+                $('.sidenav').sidenav()
+                $('.parallax').parallax()
+                $('.carousel').carousel({
+                    indicators: true
+                })
+                $('select').formSelect()
+                $('textarea#textarea1').characterCounter()
+                $('.modal').modal()
+                $('.tabs').tabs()
+            }, 300)
+        })
 
         vm.hoje = new Date().getFullYear()
 
@@ -74,16 +88,16 @@
             $http.post(config.inscricao, objData)
             .then((response) => {
                 if(response.data.status) {
-                    Materialize.toast(response.data.msg, 6000)
+                    M.toast({html: response.data.msg, displayLength: 6000})
                     vm.peneira = {}
                     vm.isLoading = false
                 } else {
-                    Materialize.toast(response.data.msg, 6000)
+                    M.toast({html: response.data.msg, displayLength: 6000})
                     vm.isLoading = false
                 }
             })
             .catch((error) => {
-                Materialize.toast(error.data, 6000)
+                M.toast({html: error.data, displayLength: 6000})
                 vm.isLoading = false
             })
         }

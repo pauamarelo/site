@@ -106,7 +106,7 @@ input::-webkit-inner-spin-button {
 
 // Header
 
-.nav-wrapper {
+nav {
     background-color: $primary-color;
     
     a {
@@ -275,13 +275,12 @@ input::-webkit-inner-spin-button {
 
 .tabs {
 	background-color: transparent;
-	margin-bottom: 10px;
-}
-
-.tabs {
+    margin-bottom: 10px;
+    
     li {
         a {
             color: $primary-color !important;
+            background: none !important;
         }
     }
 
@@ -314,6 +313,10 @@ input::-webkit-inner-spin-button {
     h4 {
         text-align: center;
     }
+
+    .download {
+        padding-top: 100px;
+    }
 }
 
 .linha {
@@ -339,26 +342,20 @@ input::-webkit-inner-spin-button {
     }
 }
 
-.download {
-	padding-top: 100px !important;
-}
-
 
 
 // Peneira
-.peneira {
+.container-peneira {
     text-align: left;
+    background-color: rgba(0, 0, 0, 0.6);
     
     h3 {
-        margin-top: 0;
         padding: 15px;
-        background-color: rgba(0, 0, 0, 0.6);
         text-align: center;
         color: #fff;
     }
 
     .container {
-        background-color: rgba(0, 0, 0, 0.8);
         color: #fff;
     }
 }
@@ -393,6 +390,11 @@ input::-webkit-inner-spin-button {
     }
 
     .input-field {
+        input,
+        textarea {
+            color: #fff;
+        }
+
         input:focus,
         textarea:focus {
             border-bottom: 1px solid $primary-color !important;
@@ -405,6 +407,16 @@ input::-webkit-inner-spin-button {
 
         .prefix {
             color: #fff !important;
+        }
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    .select-wrapper {
+        svg {
+            display: none;
         }
     }
     
@@ -694,35 +706,37 @@ input::-webkit-inner-spin-button {
             }
         }
 
-        .picker {
+        .datepicker-container {
             font-family: $roboto;
     
-            .picker__date-display {
+            .datepicker-date-display {
                 background: $primary-color;
-                
-                .picker__year {
-                    font-size: 21px;
-                }
-                
-                .picker__weekday-display,
-                .picker__month-display,
-                .picker__day-display {
-                    font-size: 40px;
-                    color: #fff;
+            }
+
+            .is-today {
+                button {
+                    color: $primary-color;
                 }
             }
 
-            .picker__day--today {
+            .is-selected {
+                button {
+                    background-color: $primary-color !important;
+                    color: #fff !important;
+                }
+            }
+            .datepicker-done,
+            .datepicker-cancel {
                 color: $primary-color !important;
             }
-            .picker__day--selected {
-                background-color: $primary-color !important;
-                color: #fff !important;
-            }
-            .picker__today,
-            .picker__close {
-                color: $primary-color !important;
-            }
+        }
+    }
+}
+
+.dropdown-content {
+    li {
+        span {
+            color: $primary-color !important;
         }
     }
 }
@@ -798,4 +812,9 @@ input::-webkit-inner-spin-button {
             }
         }
     }
+}
+
+
+md-toast {
+    z-index: 9999 !important;
 }

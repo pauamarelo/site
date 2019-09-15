@@ -5,6 +5,28 @@
 
     app.controller("noticiasCtrl", function($scope, $http, config) {
         const vm = this
+
+        $(document).ready(function(){
+            setTimeout(() => {
+                $('.sidenav').sidenav()
+                $('.parallax').parallax()
+                $('select').formSelect()
+                $('.datepicker').datepicker({
+                    showClearBtn: true,
+                    setDefaultDate: true,
+                    format: 'yyyy-mm-dd',
+                    i18n: {
+                        clear: 'Limpar',
+                        cancel: 'Fechar',
+                        months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                        monthsShort: ['Jan', 'Fev', 'Mar', 'Abrl', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                        weekdays: ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
+                        weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+                        weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
+                    }
+                })
+            }, 300)
+        })
     
         vm.loading = false
         vm.dateFilter = ''

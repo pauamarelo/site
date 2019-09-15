@@ -30,8 +30,11 @@
   "dependencies": {
     "angular": "^1.7.8",
     "angular-animate": "^1.7.8",
+    "angular-aria": "^1.7.8",
+    "angular-filter": "^0.5.17",
     "angular-lazy-img": "^1.2.0",
-    "angular-materialize": "^0.2.2",
+    "angular-material": "^1.1.20",
+    "angular-messages": "^1.7.8",
     "angular-sanitize": "^1.7.8",
     "angular-scroll": "^1.0.2",
     "angular-touch": "^1.7.8",
@@ -40,7 +43,9 @@
     "angularjs-toaster": "^3.0.0",
     "animate.css": "^3.7.2",
     "jquery": "^3.4.1",
-    "materialize-css": "^0.100.2",
+    "materialize-css": "^1.0.0-rc.2",
+    "ng-meta": "^1.0.3",
+    "oclazyload": "^1.1.0",
     "wowjs": "^1.1.3"
   }
 }

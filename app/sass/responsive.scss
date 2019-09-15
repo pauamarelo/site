@@ -1,9 +1,20 @@
+// Variáveis
+$font: 'Abel', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$primary-color: #667292;
+$steam: #000;
+$whatsapp: #25d366;
+$facebook: #3b5998;
+$youtube: #ff0000;
+$twitch: #6441a5;
+$twitter: #1da1f2;
+
 @media only screen
 and (min-width: 768px)
 and (max-width: 991px) {
 
-    #sidenav-overlay {
-        display: none !important;
+    .sidenav-overlay {
+        z-index: 1;
     }
 
     // Notícias
@@ -56,8 +67,19 @@ and (max-width: 991px) {
         }
     }
 
-    #sidenav-overlay {
-        display: none !important;
+    .sidenav {
+        background: $primary-color;
+        padding-top: 15px;
+
+        li {
+            a {
+                color: #fff;
+            }
+        }
+    }
+
+    .sidenav-overlay {
+        z-index: 1;
     }
 
     .mt-xs-15 {margin-top: 15px !important;}
@@ -93,6 +115,10 @@ and (max-width: 991px) {
         width: 100% !important;
         min-height: 500px !important;
         top: 40px !important;
+
+        img {
+            max-width: 200px;
+        }
     }
 
     /*.modal-content .overlay {
@@ -136,16 +162,16 @@ and (max-width: 991px) {
         h3 {
             margin-bottom: 0;
         }
-    }
 
-    .download {
-        padding-top: 0 !important;
+        .download {
+            padding-top: 0 !important;
+        }
     }
 
 
     // Peneira 
     .requisitos {
-        border-right: none;
+        border-right: none !important;
         margin-top: 20px;
         margin-bottom: 20px;
     }
@@ -220,10 +246,10 @@ and (max-width: 991px) {
 
 
     // fix bug parallax mobile
-    #line {
-        background: url('../images/bg.png') no-repeat center center / cover;
-    }
-    #peneira {
-        background: url('../images/peneira.jpg') no-repeat center center / cover;
-    }
+    // #line {
+    //     background: url('../images/bg.png') no-repeat center center / cover;
+    // }
+    // #peneira {
+    //     background: url('../images/peneira.jpg') no-repeat center center / cover;
+    // }
 }
