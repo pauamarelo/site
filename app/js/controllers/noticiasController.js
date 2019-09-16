@@ -27,6 +27,8 @@
                 })
             }, 300)
         })
+
+        vm.depth2 = false
     
         vm.loading = false
         vm.dateFilter = ''

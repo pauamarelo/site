@@ -10,6 +10,7 @@
             setTimeout(() => {
                 $('.sidenav').sidenav()
                 $('.parallax').parallax()
+                $('.fixed-action-btn').floatingActionButton()
             }, 300)
         })
     

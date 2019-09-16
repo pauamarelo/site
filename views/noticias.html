@@ -48,7 +48,7 @@
 				<div class="row">
 					<div class="col s12 mb-30 wow fadeIn" ng-repeat="x in vm.noticiasFiltered = (vm.noticias | filter:{'ativo':true} | filter:{'createdAt':vm.dateFilter} | filter:{'autor':vm.autorFilter} | filter:vm.textFilter | orderBy: '-createdAt' | limitTo: vm.limiteNoticias)" ng-if="!vm.loading">
 						<a ui-sref="noticia({url: x.url})">
-							<div class="box-noticia">
+							<div class="box-noticia waves-effect">
 								<div class="row">
 									<div class="col s12 l3">
 										<div class="box-image">

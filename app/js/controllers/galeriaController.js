@@ -10,7 +10,6 @@
             setTimeout(() => {
                 $('.sidenav').sidenav()
                 $('.parallax').parallax()
-                $('.materialboxed').materialbox()
             }, 300)
         })
 

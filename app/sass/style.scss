@@ -639,6 +639,7 @@ nav {
         height: 180px;
         position: relative;
         overflow: hidden;
+        background: #fff;
 
         > .row {
             margin-right: 0;
@@ -677,7 +678,7 @@ nav {
                 position: absolute;
                 bottom: 10px; left: 0;
                 width: 100%;
-                background: #fff;
+                background: transparent;
                 padding-top: 10px;
                 padding-bottom: 10px;
                 
@@ -812,9 +813,4 @@ nav {
             }
         }
     }
-}
-
-
-md-toast {
-    z-index: 9999 !important;
 }

@@ -17,6 +17,7 @@ gulp.task('deps.js', () => {
         'node_modules/angular-messages/angular-messages.min.js',
         'node_modules/angular-material/angular-material.min.js',
         'node_modules/angular-ui-router/release/angular-ui-router.min.js',
+        'node_modules/angular-materialize/src/angular-materialize.js',
         'node_modules/angular-scroll/angular-scroll.min.js',
         'node_modules/angular-lazy-img/dist/angular-lazy-img.min.js',
         'node_modules/angular-utils-disqus/dirDisqus.js',
