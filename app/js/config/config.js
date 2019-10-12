@@ -57,7 +57,12 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             url: '/partidas',
             templateUrl: 'views/partidas.html',
             controller: 'partidasCtrl',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            data: {
+                'meta': {
+                    'title': 'Partidas | PAU AMARELO'
+                }
+            }
         })
 
     $locationProvider.html5Mode(true)
