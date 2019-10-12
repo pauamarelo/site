@@ -1,0 +1,84 @@
+<div class="partidas">
+    <div class="parallax-container scrollspy">
+        <div class="parallax"><img src="images/csgo.jpg" style="filter: blur(5px);"></div>
+        <div class="logo-pa">
+            <h1 class="wow fadeInLeft">Partidas</h1>
+        </div>
+    </div>
+
+    <div class="container mt-50 mb-30">
+        <ul class="collapsible popout">
+            <li ng-repeat="x in vm.partidas">
+                <div class="collapsible-header" style="background: url('../images/maps/{{x.map}}.jpg') no-repeat center center / cover;">
+                    <div class="pelicula"></div>
+                    <i class="material-icons green-text text-accent-4" ng-if="x.status === 'win'">done</i>
+                    <i class="material-icons red-text text-darken-4" ng-if="x.status === 'loose'">close</i>
+                    <i class="material-icons grey-text text-lighten-3" ng-if="x.status === 'draw'">remove</i>
+                    <div class="row" style="width: 100%;">
+                        <div class="col s2 m4">
+                            <h5 style="text-align: right;">{{x.clan_home.score}}</h5>
+                        </div>
+                        <div class="col s8 m4">
+                            <h3 style="text-align: center; overflow: hidden; text-overflow: ellipsis;">{{x.map}}</h3>
+                        </div>
+                        <div class="col s2 m4">
+                            <h5 style="text-align: left;">{{x.clan_away.score}}</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapsible-body">
+                    <p style="text-align: center; margin-top: 0;">{{x.createdAt | date: 'EEE'}}, {{x.createdAt | date: 'dd/MM/yyyy'}} às {{x.createdAt | date: 'HH:mm'}}</p>
+                    <table class="striped mb-30">
+                        <thead>
+                            <tr>
+                                <th colspan="3" style="font-size: 32px;">{{x.clan_home.score}}</th>
+                            </tr>
+                            <tr>
+                                <th style="width: 65%;">{{x.clan_home.name}}</th>
+                                <th>K/A/D</th>
+                                <th>Diff.</th>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                            <tr ng-repeat="p in x.clan_home.players | orderBy: '-kills'">
+                                <td>{{p.player}}</td>
+                                <td>{{p.kills}}/{{p.assists}}/{{p.deaths}}</td>
+                                <td>
+                                    <span ng-class="{'green-text text-darken-1': p.kills > p.deaths, 'red-text text-darken-1': p.kills < p.deaths}">
+                                        <span ng-show="p.kills > p.deaths">+</span>{{p.kills - p.deaths}}
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="striped">
+                        <thead>
+                            <tr>
+                                <th colspan="3" style="font-size: 32px;">{{x.clan_away.score}}</th>
+                            </tr>
+                            <tr>
+                                <th style="width: 65%;">{{x.clan_away.name}}</th>
+                                <th>K/A/D</th>
+                                <th>Diff.</th>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                            <tr ng-repeat="p in x.clan_away.players | orderBy: '-kills'">
+                                <td>{{p.player}}</td>
+                                <td>{{p.kills}}/{{p.assists}}/{{p.deaths}}</td>
+                                <td>
+                                    <span ng-class="{'green-text text-darken-1': p.kills > p.deaths, 'red-text text-darken-1': p.kills < p.deaths}">
+                                        <span ng-show="p.kills > p.deaths">+</span>{{p.kills - p.deaths}}
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

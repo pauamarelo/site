@@ -53,6 +53,12 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 }
             }
         })
+        .state('partidas', {
+            url: '/partidas',
+            templateUrl: 'views/partidas.html',
+            controller: 'partidasCtrl',
+            controllerAs: 'vm'
+        })
 
     $locationProvider.html5Mode(true)
 })

@@ -5,6 +5,7 @@
 
     const json = 'json/'
     const base = 'https://pauamarelo.herokuapp.com/oapi/'
+    // const base = 'http://localhost:4000/oapi/'
 
     app.constant('config', {
         noticias: base+'news',
@@ -16,6 +17,7 @@
         mapaConst: json+'mapa.json',
         integrantes: base+'integrantes',
         galeria: base+'galeria',
-        inscricao: base+'send-mail'
+        inscricao: base+'send-mail',
+        partidas: base+'partidas'
     })
 })()

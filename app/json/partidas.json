@@ -1,0 +1,83 @@
+{
+    "status": true,
+    "lista": [
+        {
+            "_id": 1,
+            "map": "cache",
+            "status": "win",
+            "createdAt": "2019-10-10T11:00:00",
+            "clan_home": {
+                "name": "PAU AMARELO",
+                "score": 16,
+                "players": [
+                    {
+                        "player": "brd",
+                        "kills": 16,
+                        "assists": 3,
+                        "deaths": 15
+                    },
+                    {
+                        "player": "ldo",
+                        "kills": 16,
+                        "assists": 3,
+                        "deaths": 15
+                    },
+                    {
+                        "player": "familton",
+                        "kills": 16,
+                        "assists": 3,
+                        "deaths": 15
+                    },
+                    {
+                        "player": "chapeleiro",
+                        "kills": 16,
+                        "assists": 3,
+                        "deaths": 15
+                    },
+                    {
+                        "player": "nunerah",
+                        "kills": 16,
+                        "assists": 3,
+                        "deaths": 15
+                    }
+                ]
+            },
+            "clan_away": {
+                "name": "F@GS All Stars",
+                "score": 13,
+                "players": [
+                    {
+                        "player": "ZehK",
+                        "kills": 16,
+                        "assists": 3,
+                        "deaths": 15
+                    },
+                    {
+                        "player": "Ralfera",
+                        "kills": 16,
+                        "assists": 3,
+                        "deaths": 15
+                    },
+                    {
+                        "player": "goku",
+                        "kills": 16,
+                        "assists": 3,
+                        "deaths": 15
+                    },
+                    {
+                        "player": "sansão",
+                        "kills": 16,
+                        "assists": 3,
+                        "deaths": 15
+                    },
+                    {
+                        "player": "magnata",
+                        "kills": 16,
+                        "assists": 3,
+                        "deaths": 15
+                    }
+                ]
+            }
+        }
+    ]
+}
