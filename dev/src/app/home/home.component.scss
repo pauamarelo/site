@@ -1,0 +1,236 @@
+.home-page {
+    margin-top: 64px;
+    @media only screen and (max-width: 767px) {
+        margin-top: 54px;
+    }
+    background: #fff;
+
+    #first-parallax {
+        background: url('../../assets/img/banner.jpg') no-repeat center center / cover;
+        width: 100%;
+
+        .logo-pa {
+            img {
+                max-width: 100%;
+                width: 400px;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        h1 {
+            color: #f0efef;
+            font-size: 50px;
+        }
+
+        h3 {
+            color: #f0efef;
+            font-size: 30px;
+            font-family: var(--second-font) !important;
+            text-transform: none;
+        }
+    }
+
+    .historia {
+        background: #fff;
+        
+        h1 {
+            font-size: 2.92rem;
+            text-transform: uppercase;
+            color: var(--font-color);
+        }
+
+        p {
+            font-size: 20px;
+            text-align: justify;
+            color: var(--font-color);
+        }
+    }
+
+    .line {
+        position: relative;
+
+        &#line {
+            background: url('../../assets/img/bg-blur.png') no-repeat center center / cover;
+            width: 100%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0, 0.4);
+            z-index: 1;
+        }
+        
+        .container {
+            z-index: 10;
+            position: relative;
+
+            h1 {
+                font-size: 2.92rem;
+                text-transform: uppercase;
+                color: #fff;
+            }
+
+            .box-cards {
+                display: flex;
+                justify-content: space-between;
+
+                mat-card {
+                    margin: 0 15px;
+                    padding: 0;
+                    width: 20%;
+                    overflow: hidden;
+                    height: 300px !important;
+                    cursor: pointer;
+
+                    .box-img {
+                        overflow: hidden;
+                        height: 180px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    mat-card-content {
+                        padding: 15px;
+
+                        p {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+
+            .btn-principal {
+                font-size: 20px;
+                text-transform: uppercase;
+                padding: 10px 25px;
+                outline: none;
+            }
+        }
+    }
+
+    .mapa {
+        .underline {
+            border: solid var(--primary-color) 1px;
+            width: 100px;
+            margin: 5px auto;
+            display: block;
+        }
+
+        .download {
+            h2 {
+                text-align: center;
+                text-transform: uppercase;
+                
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .peneira {
+        position: relative;
+
+        &#peneira {
+            background: url('../../assets/img/peneira-blur.jpg') no-repeat center center / cover;
+            width: 100%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0, 0.4);
+            z-index: 1;
+        }
+
+        .container {
+            z-index: 10;
+            position: relative;
+
+            h1, h2, span {
+                color: #fff;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            .requisitos {
+                border-right: solid #999 1px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            
+                ul {
+                    padding: 0 25px;
+            
+                    li {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .inscricoes {
+                .mat-form-field {
+                    width: 100%;
+
+                    mat-icon {
+                        color: #fff;
+                        margin-right: 15px;
+                    }
+                }
+
+                input, textarea {
+                    color: #fff;
+                    font-size: 18px;
+                }
+
+                mat-hint {
+                    color: #fff;
+                }
+
+                .btn-principal {
+                    font-size: 18px;
+                    padding: 10px 25px;
+                    text-transform: uppercase;
+                    outline: none;
+
+                    mat-icon {
+                        margin-left: 15px;
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 767px) {
+    .home-page {
+        .line {
+            .container {
+                .box-cards {
+                    display: block;
+            
+                    mat-card {
+                        width: 100%;
+                        margin: 15px 0;
+                        height: auto !important;
+
+                        .box-img {
+                            height: 300px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

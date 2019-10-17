@@ -1,0 +1,46 @@
+<h1 mat-dialog-title class="text-center">{{data.nome}} "{{data.nick}}" {{data.sobrenome}}</h1>
+<div mat-dialog-content>
+    <div class="row">
+        <div class="col-12 col-md-3">
+            <div class="over">
+                <img [src]="data.foto" class="img-fluid">
+                <a target="_blank" [href]="data.steam" class="overlay">
+                    <div class="text">
+                        <p><fa-icon [icon]="faSteam"></fa-icon> {{data.nick}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-9">
+            <mat-tab-group mat-stretch-tabs>
+                <mat-tab label="Sobre">
+                    <ul class="list-unstyled">
+                        <li><b>Função:</b> {{data.sobre.funcao}}</li><hr>
+                        <li><b>Mapa:</b> {{data.sobre.mapa}}</li><hr>
+                        <li><b>Armas:</b> <span *ngFor="let x of data.sobre.armas; let last = last"> {{x}}<span *ngIf="!last">,</span> </span></li><hr>
+                        <li><b>Amigão:</b> {{data.sobre.amigao}}</li><hr>
+                        <li class="skill"><b>Características:</b> <span *ngFor="let x of data.sobre.caracteristicas; let last = last"> {{x}}<span *ngIf="!last">,</span> </span></li><hr>
+                        <li><b>Carreira:</b> {{data.sobre.carreira}}</li><hr>
+                        <li><img class="rank" src="../../../assets/img/ranks/{{data.sobre.patente}}.png"></li>
+                    </ul>
+                </mat-tab>
+                <mat-tab label="Config">
+                    <ul class="list-unstyled">
+                        <li><mat-icon>mouse</mat-icon>{{data.config.mouse}}</li><hr>
+                        <li><mat-icon>layers</mat-icon>{{data.config.pad}}</li><hr>
+                        <li><mat-icon>headset</mat-icon>{{data.config.headset}}</li><hr>
+                        <li><mat-icon>keyboard</mat-icon>{{data.config.keyboard}}</li><hr>
+                        <li><mat-icon>desktop_mac</mat-icon>{{data.config.screen}}</li>
+                    </ul>
+                </mat-tab>
+                <mat-tab label="Curiosidades">
+                    <fa-icon [icon]="faQuoteLeft" size="3x" pull="left" [border]="true"></fa-icon>
+                    <p>{{data.curiosidades}}</p>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="d-flex h-end">
+    <button mat-button (click)="close()">Fechar</button>
+</div>
