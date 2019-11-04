@@ -1,0 +1,35 @@
+<div class="galeria-page">
+    <div parallax [config]="{ratio: .5}" class="content-25" id="galeria-parallax">
+        <div class="overlay"></div>
+        <div class="container">
+            <h1 class="text-center text-uppercase mb-15">Galeria PAU AMARELO</h1>
+        </div>
+    </div>
+    <div class="container content-50">
+        <div class="d-flex h-center" *ngIf="loader">
+            <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+        </div>
+        <div *ngIf="!loader">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="gallery-filter list-unstyled mb-50">
+                        <li><button mat-raised-button [ngClass]="{'active': !playerActive}" (click)="filtrarGaleria('')">Todos</button></li>
+                        <li *ngFor="let x of integrantes">
+                            <button mat-raised-button [ngClass]="{'active': playerActive === x.nick}" (click)="filtrarGaleria(x)">{{x.nick}}</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <ngx-masonry [useImagesLoaded]="true">
+                        <mat-card matRipple ngxMasonryItem class="masonry-item" *ngFor="let x of galeria | orderBy:['createdAt']:['asc'] | filterBy:['integrante']:playerActive" (click)="openPic(x)">
+                            <img mat-card-image [src]="x.foto">
+                            <mat-card-content>
+                                <p class="text-center">{{x.legenda}}</p>
+                            </mat-card-content>
+                        </mat-card>
+                    </ngx-masonry>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

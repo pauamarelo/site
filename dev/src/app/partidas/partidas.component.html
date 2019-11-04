@@ -1,0 +1,93 @@
+<div class="partidas-page">
+    <div parallax [config]="{ratio: .5}" class="content-25" id="partidas-parallax">
+        <div class="overlay"></div>
+        <div class="container">
+            <h1 class="text-center text-uppercase mb-15">Partidas</h1>
+        </div>
+    </div>
+    <div class="container content-50">
+        <div class="d-flex h-center" *ngIf="loader">
+            <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+        </div>
+
+        <div *ngIf="!loader">
+            <div class="row">
+                <div class="col-12 col-md-10 offset-md-1">
+                    <mat-accordion>
+                        <mat-expansion-panel *ngFor="let x of partidas">
+                            <mat-expansion-panel-header [style.background-image]="background(x.map)">
+                                <mat-icon *ngIf="x.status === 'win'" style="color: #00c853;">done</mat-icon>
+                                <mat-icon *ngIf="x.status === 'loose'" style="color: #b71c1c;">close</mat-icon>
+                                <mat-icon *ngIf="x.status === 'draw'" style="color: #eee;">remove</mat-icon>
+                                <div class="overlay"></div>
+                                <div class="row" style="width: 100%;">
+                                    <div class="col-2 col-md-4">
+                                        <h5 style="text-align: right;">{{x.clan_home.score}}</h5>
+                                    </div>
+                                    <div class="col-8 col-md-4">
+                                        <h3 style="text-align: center; overflow: hidden; text-overflow: ellipsis;">{{x.map}}</h3>
+                                    </div>
+                                    <div class="col-2 col-md-4">
+                                        <h5 style="text-align: left;">{{x.clan_away.score}}</h5>
+                                    </div>
+                                </div>
+                            </mat-expansion-panel-header>
+                            <div>
+                                <p class="text-center" style="margin-top: 18px; font-size: 18px;">{{x.createdAt | date: 'EEE'}}, {{x.createdAt | date: 'dd/MM/yyyy'}} às {{x.createdAt | date: 'HH:mm'}}</p>
+                                <table class="striped mb-30">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="3" style="font-size: 32px;">{{x.clan_home.score}}</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="width: 65%;">{{x.clan_home.name}}</th>
+                                            <th>K/A/D</th>
+                                            <th>Diff.</th>
+                                        </tr>
+                                    </thead>
+                            
+                                    <tbody>
+                                        <tr *ngFor="let p of x.clan_home.players | orderBy:['kills']:['desc']">
+                                            <td>{{p.player}}</td>
+                                            <td>{{p.kills}}/{{p.assists}}/{{p.deaths}}</td>
+                                            <td>
+                                                <span [ngClass]="{'green': p.kills > p.deaths, 'red': p.kills < p.deaths}">
+                                                    <span [hidden]="p.kills <= p.deaths">+</span>{{p.kills - p.deaths}}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+            
+                                <table class="striped">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="3" style="font-size: 32px;">{{x.clan_away.score}}</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="width: 65%;">{{x.clan_away.name}}</th>
+                                            <th>K/A/D</th>
+                                            <th>Diff.</th>
+                                        </tr>
+                                    </thead>
+                            
+                                    <tbody>
+                                        <tr *ngFor="let p of x.clan_away.players | orderBy:['kills']:['desc']">
+                                            <td>{{p.player}}</td>
+                                            <td>{{p.kills}}/{{p.assists}}/{{p.deaths}}</td>
+                                            <td>
+                                                <span [ngClass]="{'green': p.kills > p.deaths, 'red': p.kills < p.deaths}">
+                                                    <span [hidden]="p.kills <= p.deaths">+</span>{{p.kills - p.deaths}}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,168 @@
+$steam: #000;
+$facebook: #3b5998;
+$youtube: #ff0000;
+$twitch: #6441a5;
+$twitter: #1da1f2;
+
+.brand {
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 30px;
+    }
+}
+
+mat-toolbar {
+    background: var(--primary-color) !important;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    z-index: 999;
+
+    > .container {
+        display: flex;
+
+        .navbar-right {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+    
+            a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 18px;
+
+                &.active {
+                    background: rgba(51,51,51,0.08);
+                }
+            }
+        }
+    }
+}
+
+mat-sidenav {
+    width: 250px;
+    background: var(--primary-color);
+
+    mat-nav-list {
+        a {
+            padding-left: 25px;
+            color: #fff;
+            font-size: 18px;
+
+            &.active-xs {
+                background: rgba(51,51,51,0.08);
+            }
+        }
+    }
+}
+
+.btn-bars {
+    mat-icon {
+        color: #fff;
+    }
+
+    @media only screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar-right {
+        display: none !important;
+    }
+}
+
+
+.page-footer {
+    background-color: var(--primary-color);
+    padding-top: 35px;
+
+    h3 {
+        font-size: 23px;
+        color: #f5f5f5;
+    }
+
+    p {
+        margin: 0;
+        font-size: 18px;
+        color: #f5f5f5;
+    }
+
+    ul {
+        a {
+            color: #f5f5f5;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50px;
+            width: 50px;
+            height: 50px;
+            transition: 0.3s;
+    
+            fa-icon {
+                font-size: 25px !important;
+            }
+        }
+    }
+
+    .steam {
+        &:hover {
+            li {
+                background-color: $steam;
+                transition: 0.3s;
+            }
+        }
+    }
+
+    .facebook {
+        &:hover {
+            li {
+                background-color: $facebook;
+                transition: 0.3s;
+            }
+        }
+    }
+
+    .youtube {
+        &:hover {
+            li {
+                background-color: $youtube;
+                transition: 0.3s;
+            }
+        }
+    }
+
+    .twitch {
+        &:hover {
+            li {
+                background-color: $twitch;
+                transition: 0.3s;
+            }
+        }
+    }
+
+    .footer-copyright {
+        background: rgba(51,51,51,0.08);
+        padding: 10px 0;
+
+        p {
+            font-size: 18px;
+            color: #f5f5f5;
+        }
+
+        a {
+            color: #b5e7a0;
+        }
+    }
+}
