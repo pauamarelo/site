@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RequestApiService } from '../services/request-api.service';
-import { Meta, Title } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import { SeoService } from '../services/seo.service';
 
 @Component({
@@ -19,7 +19,6 @@ export class NoticiaComponent implements OnInit {
   constructor(
     public route: ActivatedRoute,
     public reqService: RequestApiService,
-    // public meta: Meta,
     public title: Title,
     public seo: SeoService
   ) {
@@ -43,12 +42,8 @@ export class NoticiaComponent implements OnInit {
         this.img = `url(${this.noticia.img})`
 
         // Meta
-        // this.meta.updateTag({
-        //   name: 'PAU AMARELO',
-        //   content: this.noticia.titulo
-        // })
-        this.seo.addMetaTags()
         this.title.setTitle(this.noticia.titulo)
+        this.seo.addMetaTags()
         this.seo.updateMetaTags(this.noticia.conteudo.substring(0, 100), this.noticia.updatedAt, this.noticia.autor, this.noticia.titulo, this.noticia.img)
         this.seo.getMetaTags()
       } else {

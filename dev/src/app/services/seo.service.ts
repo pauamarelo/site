@@ -22,7 +22,7 @@ export class SeoService {
        {property: 'og:title', content: 'My Text'},
        {property: 'og:description', content: 'My news description'},
        {property: 'og:type', content: 'website'},
-       {property: 'og:image', content: 'http://localhost:4200/assets/img/logo.png'},
+       {property: 'og:image', content: 'http://clanpauamarelo.com/assets/img/logo.png'},
        {charset: 'UTF-8'}
     ])
   }
@@ -30,14 +30,10 @@ export class SeoService {
   getMetaTags() {
     let metaEl: HTMLMetaElement = this.meta.getTag('name= "keywords"')
     console.log(metaEl)
-    // console.log(metaEl.name)
-    // console.log(metaEl.content)
 
     let els: HTMLMetaElement[] = this.meta.getTags('name')
     els.forEach(el => {
       console.log(el)
-      // console.log(el.name)
-      // console.log(el.content)
     })
 
     let ogs: HTMLMetaElement[] = this.meta.getTags('property')

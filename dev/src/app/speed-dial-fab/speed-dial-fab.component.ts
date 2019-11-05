@@ -4,7 +4,7 @@ import { faTwitter, faWhatsapp, faFacebookF } from '@fortawesome/free-brands-svg
 import { NoticiaComponent } from '../noticia/noticia.component';
 import { ActivatedRoute } from '@angular/router';
 import { RequestApiService } from '../services/request-api.service';
-import { Meta, Title } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import { SeoService } from '../services/seo.service';
 
 @Component({
@@ -49,7 +49,6 @@ export class SpeedDialFabComponent extends NoticiaComponent implements OnInit {
   constructor(
     public route: ActivatedRoute,
     public reqService: RequestApiService,
-    // public meta: Meta,
     public title: Title,
     public seo: SeoService
   ) {

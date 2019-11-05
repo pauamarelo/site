@@ -54,8 +54,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.meta.updateTag({
-      name: 'PAU AMARELO',
+      name: 'description',
       content: 'O Maior Clan da Parte Sul/Sudeste do Brasil'
+    })
+    this.meta.updateTag({
+      property: 'og:image',
+      content: 'http://clanpauamarelo.com/assets/img/logo.png'
     })
     this.title.setTitle('PAU AMARELO | O Maior Clan da Parte Sul/Sudeste do Brasil')
     this.listar()
