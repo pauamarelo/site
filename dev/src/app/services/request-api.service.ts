@@ -6,8 +6,8 @@ import { Http, RequestOptions, Headers, ResponseContentType, RequestMethod } fro
 })
 export class RequestApiService {
   
-  // public urlBase: String = 'https://pauamarelo.herokuapp.com/oapi'
-  public urlBase: String = 'http://localhost:4000/oapi'
+  public urlBase = 'https://pauamarelo.herokuapp.com/oapi'
+  // public urlBase = 'http://localhost:4000/oapi'
 
   constructor(public http: Http) { }
 
