@@ -6,6 +6,7 @@ import { Router, NavigationStart } from '@angular/router';
 
 import * as $ from 'jquery';
 import * as M from 'materialize-css';
+import { RequestApiService } from './services/request-api.service';
 
 @Component({
   selector: 'app-root',
@@ -22,11 +23,14 @@ export class AppComponent implements OnDestroy, OnInit {
 
   private _mobileQueryListener: () => void;
 
+  public views = 0
+
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
     public animateScrollService: NgAnimateScrollService,
-    public router: Router
+    public router: Router,
+    public reqService: RequestApiService
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 767px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -51,6 +55,20 @@ export class AppComponent implements OnDestroy, OnInit {
         }
       }
     })
+    
+    // views counter
+    const seen = sessionStorage['seen'] || false
+    if(!seen) {
+      this.reqService.getRequest('views').subscribe((data: any) => {
+        const response = JSON.parse(data._body)
+        this.views = response.data[0].views
+
+        this.reqService.putRequest(`views/${response.data[0]._id}`, {views: this.views+=1}).subscribe((data: any) => {
+          console.log(data)
+        })
+      })
+      sessionStorage['seen'] = true
+    }
   }
 
   title = 'PAU AMARELO';
