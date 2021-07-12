@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "imagem": "assets/img/mapa1.jpg"
+    },
+    {
+        "id": 2,
+        "imagem": "assets/img/mapa2.jpg"
+    },
+    {
+        "id": 3,
+        "imagem": "assets/img/mapa3.jpg"
+    },
+    {
+        "id": 4,
+        "imagem": "assets/img/mapa4.jpg"
+    }
+]
